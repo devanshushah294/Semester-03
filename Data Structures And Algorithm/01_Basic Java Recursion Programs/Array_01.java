@@ -1,3 +1,5 @@
+/* Read number in array then read 2 different numbers the and replace first
+number with second number & print the changed indexes and also print the final arrray */
 import java.util.Scanner;
 public class Array_01{
     public static void main(String[] args){
