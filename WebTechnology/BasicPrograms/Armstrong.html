@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        n = parseInt(prompt("Enter the number"));
+        extra = n;
+        countDigit = 1;
+        while(parseInt(extra/10)!=0){
+            extra = parseInt(extra/10);
+            countDigit++;
+        }
+        sum = 0;
+        extra = n;
+        while(parseInt(extra/10)!=0){
+            digit = extra%10;
+            xy = 1;
+            extra = parseInt(extra/10);
+            for(i = 0;i<countDigit;i++){
+                xy *= digit; 
+            }
+            sum += xy;
+        }
+        digit = extra%10;
+        for(i = 0;i<countDigit;i++){
+                xy *= digit; 
+            }
+            sum += xy;
+        if(sum == n){
+            document.write("the number is armstrong");
+        }
+        else{
+            document.write("the number is not armstrong");
+        }
+    </script>
+</body>
+</html>
