@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        no1 = parseInt(prompt("Enter number 1 :"));
+        no2 = parseInt(prompt("Enter number 2 :"));
+       
+        // storing the factors of number 1
+        nof1=0;
+        const factors1 = [];
+        for(i = 1; i<parseInt(no1/2); i++){
+            if(no1%i==0){
+                factors1[nof1] = i;
+                nof1++;
+            }
+        }
+        factors1[nof1] = no1;
+        // storing the factors of number 1
+
+        // storing the factors of number 2
+        nof2=0;
+        const factors2 = [];
+        for(i = 1; i<parseInt(no2/2); i++){
+            if(no2%i==0){
+                factors2[nof2] = i;
+                nof2++;
+            }
+        }
+        factors2[nof2] = no2;
+        // storing the factors of number 1
+        gcd = 0;
+        flag = false;
+        for(i = nof1; i>=0; i--){
+            for(j = nof2; j>=0; j--){
+                if(factors1[i]==factors2[j]){
+                    gcd = factors1[i];
+                    flag = true;
+                    break;
+                }
+            }
+            if(flag){
+                break;
+                }
+        }
+        if(flag){
+            document.write(gcd+" is gcd");
+        }
+        else{
+            document.write("Please enter the correct number")
+        }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
