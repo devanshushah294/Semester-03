@@ -4,6 +4,16 @@ class Matrix{
     Scanner sc2 = new Scanner(System.in);
     int i;
     int j;
+    int[][] matrixValues;
+    public void createMatrix(){
+        matrixValues = new int[i][j];
+    }    
+    public  void createMatrixSetValues(){    
+    matrixValues = new int[i][j];
+    this.setElementsValues();
+
+    }
+
     public Matrix(int i,int j){
         this.i = i;
         this.j = j;
@@ -24,15 +34,9 @@ class Matrix{
         this.j = sc2.nextInt();
     }
 
-    int[][] matrixValues = new int[i][j];
-    // for(int m = 0 ; m<i ; m++){
-        // for(int n = 0 ; n<j ; n++){
-            // matrixValues[m][n] = 0;
-        // }
-    // }    
     public void setElementsValues(){
         for(int m = 0;m<this.i;m++){
-            for(int n = 0; n<this.j ; j++){
+            for(int n = 0; n<this.j ; n++){
                 System.out.println("Enter the number["+(m+1)+"]["+(n+1)+"]");
                 matrixValues[m][n] = sc2.nextInt();
             }
@@ -45,12 +49,12 @@ class Matrix{
             System.out.println("your matrix can't be multiplied.The Answer you may get will be wrong");
         }
         else{
-            for(int m = 0;m<aMatrix.i;m++){
-                for(int n = 0;n<aMatrix.j;n++){
-                    for(int x = this.j;x>0;x--){
-                        for(int y = this.j;y>0;y--){
-                            aMatrix.matrixValues[m][n] += this.matrixValues[x][y]*gMatrix.matrixValues[y][x]; 
-                        }
+            aMatrix.createMatrix();
+                    for(int x = 0; x<this.i ; x++){
+                        for(int y = 0; y<gMatrix.j ; y++){
+                            for(int z = 0; z < gMatrix.i ;z++){
+                                aMatrix.matrixValues[x][y] += this.matrixValues[x][z]*gMatrix.matrixValues[z][y]; 
+                            // System.out.println(this.j);
                     }
                 }
             }
@@ -62,9 +66,9 @@ class Matrix{
 public class MatrixMultiplication {
     public static void main(String[] args) {
         Matrix m1 = new Matrix();
-        m1.setElementsValues();
+        m1.createMatrixSetValues();
         Matrix m2 = new Matrix();
-        m2.setElementsValues();
+        m2.createMatrixSetValues();
         Matrix m3 = m1.multiplyMatrix(m2);
         m3.printElements();
     }
