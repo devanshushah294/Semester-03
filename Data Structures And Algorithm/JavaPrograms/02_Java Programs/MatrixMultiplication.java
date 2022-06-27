@@ -54,7 +54,6 @@ class Matrix{
                         for(int y = 0; y<gMatrix.j ; y++){
                             for(int z = 0; z < gMatrix.i ;z++){
                                 aMatrix.matrixValues[x][y] += this.matrixValues[x][z]*gMatrix.matrixValues[z][y]; 
-                            // System.out.println(this.j);
                     }
                 }
             }
