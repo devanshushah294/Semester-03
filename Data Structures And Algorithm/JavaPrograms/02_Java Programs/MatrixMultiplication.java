@@ -5,13 +5,14 @@ class Matrix{
     int i;
     int j;
     int[][] matrixValues;
+
     public void createMatrix(){
         matrixValues = new int[i][j];
     }    
-    public  void createMatrixSetValues(){    
-    matrixValues = new int[i][j];
-    this.setElementsValues();
 
+    public  void createMatrixSetValues(){    
+        matrixValues = new int[i][j];
+        this.setElementsValues();
     }
 
     public Matrix(int i,int j){
@@ -50,10 +51,10 @@ class Matrix{
         }
         else{
             aMatrix.createMatrix();
-                    for(int x = 0; x<this.i ; x++){
-                        for(int y = 0; y<gMatrix.j ; y++){
-                            for(int z = 0; z < gMatrix.i ;z++){
-                                aMatrix.matrixValues[x][y] += this.matrixValues[x][z]*gMatrix.matrixValues[z][y]; 
+            for(int x = 0; x<this.i ; x++){
+                for(int y = 0; y<gMatrix.j ; y++){
+                    for(int z = 0; z < gMatrix.i ;z++){
+                        aMatrix.matrixValues[x][y] += this.matrixValues[x][z]*gMatrix.matrixValues[z][y]; 
                     }
                 }
             }
