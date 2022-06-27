@@ -1,0 +1,10 @@
+Wap to concate two Strings in javaScript
+Wap to demonstrate the use of various in built String functions
+Wa js to take two digit numbers and then saperate this two digits then multiply first digits for second digit times 
+WA js that uses a loop that searches a word in sentence held in an array and returning the index of the words
+W An html file with javaScript that finds position of first occurence of vovel a "" and last occurence of vovel a n a given word and returns the string between them
+WAP to create an arrays of countries read values of an array from the user and print it
+WAP to read an array from the useer and sort them in ascending orde
+Demonstrate user defined functions using javaScript
+Demonstrate the use of array to find maximum number 
+Wap to demonstrate the use of various in built functions on an array like push, pop,sort etc

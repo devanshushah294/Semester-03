@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        s1 = prompt("Enter the String : ");
+        fi = 0;
+        fe = 0;
+        for(i=0;i<s1.length;i++){
+            if(s1.charAt(i)=='a'){
+                console.log(i+"is the first index of a:");
+                fi = i;
+                break;
+            }
+        }
+        for(i=s1.length;i>0;i--){
+            if(s1.charAt(i) =='a'){
+                console.log(i+"is the last index of a:");
+                li = i;
+                break;
+            }
+        }
+        console.log("The string between first a and last a is ->  "+s1.substring(fi+1,li))
+    </script>
+</body>
+</html>

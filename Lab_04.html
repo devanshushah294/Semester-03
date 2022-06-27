@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        s1 = prompt("Enter the String:");
+        var words = s1.split(" ");
+        console.log(words);
+        s2 = prompt("Enter the word you want to compare:");
+        for(i = 0;i<words.length;i++){
+            if(s2.toLowerCase() == words[i].toLowerCase()){
+                console.log(i+" is the index to split");
+            }
+        } 
+
+    </script> 
+</body>
+</html>
