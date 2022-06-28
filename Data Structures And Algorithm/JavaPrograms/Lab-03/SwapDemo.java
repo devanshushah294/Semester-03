@@ -1,3 +1,4 @@
+// Write a program to swap two numbers using user-defines method.s
 import java.util.Scanner;
 class Swap{    
     int n1,n2;
