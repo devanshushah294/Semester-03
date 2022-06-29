@@ -1,0 +1,29 @@
+<!-- Demonstrate the use of array to find maximum number. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function maximumNumberInArray(array){
+            maximumNumber = array[0];
+            for(i = 0; i<array.length;i++){
+                if(maximumNumber<array[i]){
+                    maximumNumber = array[i];
+                }
+            }
+            return maximumNumber;
+        }
+        n = parseInt(prompt("Enter the number of elements of array :"));
+        var myArray = new Array(n);
+        for(i = 0; i<n ; i++){
+            myArray[i] = parseInt(prompt("Enter the number"+(i+1)));
+        }
+        console.log("The maximum number in the array is : "+maximumNumberInArray(myArray));
+    </script>
+</body>
+</html>
