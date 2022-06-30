@@ -33,8 +33,14 @@ class Student_Detail{
 
 public class StudentDemo {
     public static void main(String[] args) {
-        Student_Detail s1 = new Student_Detail();
-        s1.printStudentDetails();
+        Scanner sc = new  Scanner(System.in);
+        System.out.println("Enter the number of students");
+        int n = sc.nextInt(); 
+        Student_Detail[] student = new Student_Detail[n];
+        for(int i = 0;i<n;i++){
+            student[i] = new Student_Detail();
+            student[i].printStudentDetails();
+        }
     }
     
 }
