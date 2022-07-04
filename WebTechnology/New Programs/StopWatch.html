@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *{
+            box-sizing: border-box;
+            background-color: black;
+        }
+        #heading{
+            text-align: center;
+            font-size: 10vh;
+            color: red;
+        }
+        button{
+            color:white;
+            border: 1px solid white;
+            height: 5vh;
+            width: 5vw;
+        }
+        #strtstp{
+            margin-left: 40vw;
+        }
+        #reset{
+            margin-left: 10vw;
+        }
+        #stopwatch{
+            color: blue;
+            font-size: 10vh;
+            text-align: center;
+            border: 1px solid transparent;
+            height: 20vh;
+
+        }
+        button:hover{
+            background-color: brown;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="heading">StopWatch</div>
+    <div id="stopwatch">0</div>
+    <div id="buttons">
+        <button onclick="strtstp()" id="strtstp">Start</button>
+        <button id="reset" onclick="resetStopwatch()">Reset</button>
+    </div>
+    <script>
+        var a = 0;
+        var c ;
+        function strtstp(){
+            e = document.getElementById("strtstp");
+            if(e.innerHTML == "Start"){
+                startCounter();
+                e.innerHTML = "Stop";
+            }else if(e.innerHTML == "Stop"){
+                stopCounter();
+                e.innerHTML = "Start"
+            }
+        }
+        function startCounter(){
+            c = setInterval(printCounter,10)    
+        }
+        function printCounter(){
+            a++;
+            temp = document.getElementById("stopwatch")
+            temp.innerHTML = a/100;
+        }
+        function stopCounter(){
+            clearInterval(c);
+        }
+        function resetStopwatch(){
+        stopCounter();
+        a=0;
+            var temp = document.getElementById("stopwatch");
+            temp.innerHTML = "0";
+        }
+    </script>
+</body>
+</html>
