@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="BasicCalculator.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">Calculator</h1>
+    <div id="screen" class="answer"></div>
+    <div id="history">
+        History
+    </div>
+    <div id="extra"></div>
+    <div id="btn">
+        <button class="buttons" onclick="operation(this)">+</button>
+        <button class="buttons" onclick="input(this)">&pi;</button>
+        <button class="buttons" onclick="input(this)">e</button>
+        <button class="buttons" onclick="clearScreen(this)">C</button>
+        <button class="buttons" onclick="goBack(this)">Back</button>
+        <button class="buttons" onclick="operation(this)">x
+            <sup>2</sup>
+        </button>
+        <button class="buttons" onclick="operation(this)">1/x</button>
+        <button class="buttons" onclick="operation(this)">|x|</button>
+        <button class="buttons" onclick="operation(this)">exp</button>
+        <button class="buttons" onclick="operation(this)">mod</button>
+        <button class="buttons" onclick="operation(this)">
+            <sup>2</sup>&#x221Ax
+        </button>
+        <button class="buttons" onclick="input(this)">(</button>
+        <button class="buttons" onclick="input(this)">)</button>
+        <button class="buttons" onclick="operation(this)">n!</button>
+        <button class="buttons" onclick="operation(this)">/</button>
+        <button class="buttons" onclick="operation(this)">x<sup>y</sup></button>
+        <button class="buttons" onclick="input(this)">7</button>
+        <button class="buttons" onclick="input(this)">8</button>
+        <button class="buttons" onclick="input(this)">9</button>
+        <button class="buttons" onclick="operation(this)">*</button>
+        <button class="buttons" onclick="operation(this)">10<sup>x</sup></button>
+        <button class="buttons" onclick="input(this)">4</button>
+        <button class="buttons" onclick="input(this)">5</button>
+        <button class="buttons" onclick="input(this)">6</button>
+        <button class="buttons" onclick="operation(this)">-</button>
+        <button class="buttons" onclick="operation(this)">log</button>
+        <button class="buttons" onclick="input(this)">1</button>
+        <button class="buttons" onclick="input(this)">2</button>
+        <button class="buttons" onclick="input(this)">3</button>
+        <button class="buttons" onclick="operation(this)">+</button>
+        <button class="buttons" onclick="operation(this)">ln</button>
+        <button class="buttons" onclick="operation(this)">+/-</button>
+        <button class="buttons" onclick="input(this)">0</button>
+        <button class="buttons" onclick="input(this)">.</button>
+        <button class="buttons" onclick="output()" >=</button>
+    </div>
+    <script src="Calculator.js"></script>
+</body>
+</html>

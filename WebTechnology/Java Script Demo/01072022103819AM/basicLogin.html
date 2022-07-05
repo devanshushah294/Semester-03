@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<input type="text" id="txtUsername"><br/>
+	<input type="password" id="txtPassword">
+	<input type="button" value="show" onclick="togglePass()" id="toggleBtn"/>
+
+	<br/>
+	<input type="button" value="Login" onclick="login()"><br/>
+
+	<h1 id="ans"></h1>
+
+	<script type="text/javascript">
+		function login(){
+			var un = document.getElementById("txtUsername");
+			var p = document.getElementById("txtPassword");
+
+			if(un.value=="arjun" && p.value=="bala"){
+				document.write("Valid User");
+			}
+			else{
+				document.write("Username/password does not match");	
+			}
+		}
+
+		function togglePass(){
+			var t = document.getElementById("txtPassword");
+			var tb = document.getElementById("toggleBtn");
+			if(t.type=="text"){
+				t.type="password";	
+				tb.value="show";
+			}
+			else{
+				t.type="text";
+				tb.value="hide";
+			}
+			
+		}
+	</script>
+</body>
+</html>

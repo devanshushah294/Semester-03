@@ -1,0 +1,74 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-color: black;
+}
+
+#heading{
+    color: white;
+    font-size: 5vh;
+    text-align: center;
+    height: 10vh;
+    width: 100vw;
+    border: 1px solid transparent;
+    padding: auto;
+    float: left;
+}
+
+#screen{
+    color: white;
+    height: 17vh;
+    width: 79vw;
+    border: 1px solid white;
+    border-radius: 5px;
+    float: left;
+}
+
+#history{
+    text-align: center;
+    font-size: 1.5vw;
+    color: white;
+    height: 85vh;
+    width: 19vw;
+    float: left;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-left: 0.5vw;
+}
+
+#extra{
+    color: white;
+    height: 12vh;
+    width: 79vw;
+    float: left;
+    border: 1px solid white;
+    border-radius: 5px;
+    position: relative;
+    bottom: 68vh;
+}
+
+#btn{
+    border: 1px solid transparent;
+    float: left;
+    height: 59vh;
+    width: 79vw;
+    border-radius: 5px;
+    position: relative;
+    bottom: 68vh;
+}
+
+button{
+    color: white;
+    font-size: large;
+    margin: 0.45vh 0.35vw;
+    height: 7.5vh;
+    width: 15vw;
+    float: left;
+    border: 1px solid rgba(42, 6, 6, 0.668);
+    border-radius: 5px;
+}
+.buttons:hover{
+    background-color: rgba(42, 6, 6, 0.668);
+    box-shadow: 0 8px 16px 0 rgba(126, 43, 43, 0.668);
+}

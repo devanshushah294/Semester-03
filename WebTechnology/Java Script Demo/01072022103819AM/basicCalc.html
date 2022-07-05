@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>Enter Para1 </td>
+			<td>:</td>
+			<td><input type="text" id="txtPara1"></td>
+		</tr>
+		<tr>
+			<td>Enter Para2 </td>
+			<td>:</td>
+			<td><input type="text" id="txtPara2"></td>
+		</tr>
+		<tr>
+			<td colspan="3" align="center">
+				<input type="button" value="+" onclick="calc()">
+				<input type="button" value="-" onclick="sub()">
+				<input type="button" value="*" onclick="mul()">
+				<input type="button" value="/" onclick="div()">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3"><h1 id="ans"></h1></td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		function add(){
+			var para1 = document.getElementById("txtPara1");
+			var para2 = document.getElementById("txtPara2");
+			var ansH1 = document.getElementById("ans");
+
+			a = parseInt(para1.value) + parseInt(para2.value);
+
+			ansH1.innerHTML = a;
+		}
+		function sub(){
+			var para1 = document.getElementById("txtPara1");
+			var para2 = document.getElementById("txtPara2");
+			var ansH1 = document.getElementById("ans");
+
+			a = parseInt(para1.value) - parseInt(para2.value);
+
+			ansH1.innerHTML = a;
+		}
+		function div(){
+			var para1 = document.getElementById("txtPara1");
+			var para2 = document.getElementById("txtPara2");
+			var ansH1 = document.getElementById("ans");
+
+			a = parseInt(para1.value) / parseInt(para2.value);
+
+			ansH1.innerHTML = a;
+		}
+		function mul(){
+			var para1 = document.getElementById("txtPara1");
+			var para2 = document.getElementById("txtPara2");
+			var ansH1 = document.getElementById("ans");
+
+			a = parseInt(para1.value) * parseInt(para2.value);
+
+			ansH1.innerHTML = a;
+		}
+	</script>
+</body>
+</html>

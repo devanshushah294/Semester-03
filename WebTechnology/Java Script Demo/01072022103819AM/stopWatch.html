@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		#counter{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<input 
+		type="button" 
+		value="Start Counter" 
+		onclick="startCounter()">
+	<input 
+		type="button" 
+		value="Stop Counter"
+		onclick="stopCounter()">
+
+	<input type="button" value="Reset" onclick="resetTimer()">
+
+	<h1 id="counterName">Counter</h1>
+	<h1 id="counter">asdf</h1>
+
+	<script type="text/javascript">
+		var a =0;
+		var c;
+
+
+		function startCounter(){
+			c = setInterval(printCounter,10)
+		}
+
+		function resetTimer(){
+			stopCounter();
+			a=0;
+			var temp = document.getElementById("counter");
+			temp.innerHTML="0";
+		}
+
+		function printCounter(){
+			a++;
+			
+			var temp = document.getElementById("counter");
+			temp.innerHTML=a/100;
+		}
+
+		function stopCounter(){
+			clearInterval(c);
+		}
+
+	</script>
+</body>
+</html>
