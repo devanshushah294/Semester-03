@@ -5,11 +5,11 @@ public class AiBi {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the string 1:");
         String str = sc.nextLine();
-        int numberOfA;
-        int numberOfB;
+        int numberOfA = 0;
+        int numberOfB = 0;
         String str2 = str.toLowerCase();
-        for(int i = 0;i<str.length;i++){
-            if(str.charAt(i)!='a'||str.charAt(i)!='b'){
+        for(int i = 0;i<str.length();i++){
+            if(str.charAt(i)!='a'&&str.charAt(i)!='b'){
                 continue;
             }
             else if(str.charAt(i)=='a'){
@@ -20,10 +20,10 @@ public class AiBi {
             }
         }
         if(numberOfA == numberOfB){
-            System.out.println("is in AiB form");
+            System.out.println(str+" is in AiB form");
         }
         else{
-            System.out.println("is not in AiB form");
+            System.out.println(str+" is not in AiB form");
         }
     }
 }
