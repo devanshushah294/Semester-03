@@ -1,11 +1,11 @@
 ﻿/*
 Create Stored Procedures for below table.
 MST_City
-ColumnName	DataType		Description
-CityID		Int				PK
+ColumnName	DataType	Description
+CityID		Int		PK
 CityName	Varchar(250)	Not Null
-Pincode		Varchar(6)		Null
-StateID		Int				Not Null, FK
+Pincode		Varchar(6)	Null
+StateID		Int			Not Null, FK
 CityRemarks Varchar(500)	Null
  Give proper name like PR_TableName_OperationName
 1. Select All
