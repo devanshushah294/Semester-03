@@ -1,13 +1,36 @@
+﻿/*
+Create Stored Procedures for below table.
+MST_City
+ColumnName		DataType	Description
+CityID		Int		PK
+CityName		Varchar(250)Not Null
+Pincode		Varchar(6) Null
+StateID		Int		Not Null,	FK
+CityRemarks		Varchar(500)	Null
+ Give proper name like PR_TableName_OperationName
+1. Select All
+CityID, CityName, Pincode, CityRemarks, StateID, 
+StateName
+2. Insert
+3. Update
+4. Delete
+5. SelectByPK
+6. SelectByPincodeStartWith360
+7. SelectByCityNamePincode
+8. SelectByCityRemarks
+9. SelectByStateID
+10. SelectByStateIDCityID
+*/
 Create DATABASE STOREDPROCEDURE_355;
 --Answer 1
 Alter Procedure PR_MST_City_Select
-as
-begin
-	select* 
+AS
+Begin
+	Select* 
 	from MST_city inner join MST_State
 	on MST_city.stateID = MST_State.State_ID
-end
-exec PR_MST_City_Select
+End
+Exec PR_MST_City_Select
 
 --Answer 2
 Create Procedure Pr_MST_City_Insert
@@ -16,9 +39,9 @@ Create Procedure Pr_MST_City_Insert
 	@Pincode		varchar(6),
 	@CityRemarks	varchar(500),
 	@StateID		int 
-as
+As
 Begin
-	Insert into MST_City
+	Insert Into MST_City
 	(
 	CityID,	
 	CityName,	
@@ -26,7 +49,7 @@ Begin
 	CityRemarks,
 	StateID
 	)
-	values
+	Values
 	(
 	@CityID,		
 	@CityName,	
