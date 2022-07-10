@@ -5,7 +5,7 @@ ColumnName	DataType	Description
 CityID		Int		PK
 CityName	Varchar(250)	Not Null
 Pincode		Varchar(6)	Null
-StateID		Int		Not Null, FK
+StateID		Int	Not Null, FK
 CityRemarksVarchar(500)Null
  Give proper name like PR_TableName_OperationName
 1. Select All
