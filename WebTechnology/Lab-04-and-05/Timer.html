@@ -1,6 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        *{
+            color: red;
+            background-color: black;
+            box-sizing: border-box;
+        }
+        button{
+            color: yellow;
+            margin-left: 5vw;
+            margin-top: 5vh;
+            height: 5vh;
+            width: 5vw;
+            border: 1px solid blue;
+        }
+        button:hover{
+
+        }
+        #buttons{
+            padding-left: 5vw;
+            padding-top: 5vh;
+            border: 1px solid transparent;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +33,69 @@
     <input type="number" id="hours">:
     <input type="number" id="minutes">:
     <input type="number" id="seconds">
-    <button id>start</button>
+    <div id="buttons">
+        <button id="start" onclick="start()">Start</button>
+        <button id="stop" onclick="stop()">Stop</button>
+        <button id="reset" onclick="reset()">Reset</button>
+    </div>
     <script>
-        
+        // function start(){
+        //     hours = document.getElementById("hours");
+        //     minutes = document.getElementById("minutes");
+        //     seconds = document.getElementById("seconds");
+        //     hours.value++;
+        //     minutes.value++;
+        //     seconds.value++;
+        // }
+        function start(){
+            startCounter();
+            console.log("hello");  
+        }
+        function startCounter(){
+            c = setInterval(timer,1000);
+        }
+        function timer(){
+            hours = document.getElementById("hours");
+            minutes = document.getElementById("minutes");
+            seconds = document.getElementById("seconds");
+            if(minutes.value<60 && seconds.value<60){
+                if(seconds.value>0){
+                    seconds.value--;
+                }
+                else{
+                    if(minutes.value>0){
+                        minutes.value--;
+                        seconds.value = 59;
+                    }
+                    else{
+                        if(hours.value>0){
+                            hours.value--;
+                            minutes.value = 59;
+                            seconds.value = 59;
+                        }
+                        else{
+                            stopCounter();
+                            document.write("Your Time is up");
+                        }
+                    }
+                }
+            }
+        }
+        function stopCounter(){
+            clearInterval(c);
+        }
+        function stop(){
+            stopCounter();
+        }
+        function reset(){
+            stopCounter();
+            hours = document.getElementById("hours");
+            minutes = document.getElementById("minutes");
+            seconds = document.getElementById("seconds");
+            hours.value = "";
+            minutes.value = "";
+            seconds.value = "";
+        }
     </script>
 </body>
 </html>

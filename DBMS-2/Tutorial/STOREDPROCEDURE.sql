@@ -23,7 +23,7 @@ StateName
 */
 Create DATABASE STOREDPROCEDURE_355;
 --Answer 1
-Create Procedure PR_MST_City_Select
+Create  Procedure PR_MST_City_Select
 AS
 Begin
 	Select* 
