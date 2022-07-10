@@ -2,21 +2,27 @@ CREATE DATABASE Student_Info_355;
 Use Student_Info_355;
 
 /*1. Display Name of Student who belongs to either Semester 3 or 5. (Use IN & OR)*/
-	SELECT	Name 
-	from	Student
-	where	sem = 3 or sem = 5 
+SELECT	Name 
+from	Student
+where	sem = 3 or sem = 5 
 
 select	Name
 from	Student
 where	sem in(3,5);
 
 /*2. Find Student Name & Enrollment No in which Student Id between 103 to 105.*/
+--Using Between
 select	Name ,EnrollmentNo
 from	Student
-where	StuID between 103 and 105;
+where	StuID BETWEEN 103 and 105;
+
+--using > and <
+select  name,EnrollmentNo
+from	Student
+where  	StuID<105 and StuID>103
 
 /*3. Find Student Name & Enrollment No with their Email Who belongs to 5th Semester.*/
-select	Name,EnrollmentNo
+select	Name,EnrollmentNo,Email
 from	Student
 where	Sem = 5;
 
