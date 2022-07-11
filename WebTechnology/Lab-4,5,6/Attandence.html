@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
+		*{
+			box-sizing: border-box;
+		}
+		#abscentnumbers{
+			position: fixed;
+			margin: 20vh;
+			height: 25vh;
+			width: 50vw;
+			float: left;
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<div id="pa">
+ 	<button onclick="uncheck()">un-check</button>
+	<button onclick="check()">check</button>
+	<div id="abscentnumbers"></div>
+	</div>
+	<!-- <div id="log" style="border: 2px solid black; width: 50px; height: 70vh;"></div> -->
+</body>
+		<script type="text/javascript">
+			var temp=document.getElementById('pa').innerHTML		
+			for(i=101;i<170;i++){
+			document.write('<input type="checkbox" name="\i" onclick="AB(this)">'+i+'<br>');
+			}
+			for(i=201;i<270;i++){
+			document.write('<input type="checkbox" name="\i" onclick="AB(this)"> '+i+'<br>');
+			}
+			for(i=301;i<370;i++){
+			document.write('<input type="checkbox" name="\i" onclick="AB(this)"> '+i+'<br>');
+			}
+			function AB(tag){
+				console.log(tag);
+				// var demo = document.getElementsByTagName('input');
+				// var e = document.getElementById('abscentnumbers');
+				// for(i = 0;i<demo.length;i++){
+				// 	if(demo[i].checked){
+				// 		continue;
+				// 	}
+				// 	else{
+						
+				// 	}
+				// }								
+			}
+			function uncheck() {
+				var demo=document.getElementsByTagName('input');
+				console.log(demo)
+				for( var i=0;i<demo.length;i++){
+					demo[i].checked=false;
+				}
+			}
+			function check(){
+				var demo=document.getElementsByTagName('input');
+				console.log(demo)
+				for( var i=0;i<demo.length;i++){
+					demo[i].checked=true;
+				}
+			}
+		</script>
+</html>
