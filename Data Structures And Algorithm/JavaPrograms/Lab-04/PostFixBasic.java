@@ -2,9 +2,8 @@ import java.util.Scanner;
 class Stack{
     char[] operators;
     int top = -1;
-    String operation = "";
     public Stack(int n){
-        operators = new char[n/2];
+        operators = new char[n];
     }
     public void push(char opr){
         if(top>=operators.length){
@@ -17,7 +16,7 @@ class Stack{
     }
     public char getTop(){
         if(top==-1){
-            return 'n';
+            return 'a';
         }
         else{
             return operators[top];
@@ -26,11 +25,10 @@ class Stack{
     public char pop(){
         if(top<=-1){
             System.out.println("Stack Underflow");
-            return (char)-1;
+            return 'a';
         }
         else{
-            top--;
-            return operators[top+1];
+            return operators[top--];
         }
     }
 }
@@ -55,7 +53,7 @@ public class PostFixBasic {
             operatorPrecedence = 4;
             break;
 
-            case 'n':
+            case 'a':
             operatorPrecedence = 0;
         }
         return operatorPrecedence;
@@ -67,25 +65,30 @@ public class PostFixBasic {
         String postfixOperation = "";
         Stack s1 = new Stack(str.length());
         for(int i = 0; i<str.length(); i++){
-            if(str.charAt(i)=='+'||str.charAt(i)=='-'||str.charAt(i)=='*'||str.charAt(i)=='/'){
-                if(checkPrecedence(str.charAt(i))<=checkPrecedence(s1.getTop())){
-                    while(s1.getTop()!='n'){
-                        postfixOperation += s1.pop();
-                    }
-                    s1.push(str.charAt(i));
+            char ch=str.charAt(i);
+            if(Character.isLetter(ch)){
+                postfixOperation+=ch;
+            }
+            else if(ch=='('){
+                s1.push(ch);
+            }
+            else if(ch==')'){
+                while(s1.getTop()!='(' && s1.top!=-1){
+
+                    postfixOperation+=s1.pop();
                 }
-                else{
-                    s1.push(str.charAt(i));
-                }
+                s1.pop();
             }
             else{
-                postfixOperation += str.charAt(i);
+                if(checkPrecedence(ch)<=checkPrecedence(s1.getTop())){
+                    postfixOperation+=s1.pop();
+                }
+                s1.push(ch);
             }
         }
-        while(s1.getTop()!='n'){
-            postfixOperation += s1.pop();
+        while(s1.top!=-1){
+            postfixOperation+=s1.pop();
         }
         System.out.println(postfixOperation);
     }
-    
 }
