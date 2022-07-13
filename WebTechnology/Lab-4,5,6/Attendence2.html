@@ -57,7 +57,7 @@
         }
 
 
-        
+       
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -86,91 +86,46 @@
     </div>
     <script>
         function AB(notpresent){
-            hello = document.getElementsByTagName("input");
-            //new new new
             if(notpresent.name=='a'){
-                for(i=101;i<166;i++){
-                    if(notpresent.checked==true){
-                        temp = document.getElementById('abscent-class-a').innerHTML;
-                        temp.replace(notpresent.value.toString(),"");
-                        // document.getElementById('abscent-class-a').innerHTML-=notpresent.value;
-                        break;
-                    }
-                    else if(notpresent.checked==false){
-                        document.getElementById('abscent-class-a').innerHTML+=notpresent.value;
-                        break;
-                    }
+                if(notpresent.checked==true){
+                    temp = document.getElementById('abscent-class-a').innerHTML;
+                    temp = temp.replace(notpresent.value+',',"");
+                    document.getElementById('abscent-class-a').innerHTML=temp;
+                }
+                else if(notpresent.checked==false){
+                    document.getElementById('abscent-class-a').innerHTML+=notpresent.value+',';
                 }
             }
-            if(notpresent.name=='b'){
-                for(i=101;i<166;i++){
-                    if(notpresent.checked==true){
-    
-                    }
-                    else{
-                        
-                    }
+            else if(notpresent.name=='b'){
+                if(notpresent.checked==true){
+                    temp = document.getElementById('abscent-class-b').innerHTML;
+                    temp = temp.replace(notpresent.value+',',"");
+                    document.getElementById('abscent-class-b').innerHTML=temp;
+                }
+                else if(notpresent.checked==false){
+                    document.getElementById('abscent-class-b').innerHTML+=notpresent.value+',';
                 }
             }
-            if(notpresent.name=='c'){
-                for(i=101;i<166;i++){
-                    if(notpresent.checked==true){
-    
-                    }
-                    else{
-                        
-                    }
+            else if(notpresent.name=='c'){
+                if(notpresent.checked==true){
+                    temp = document.getElementById('abscent-class-c').innerHTML;
+                    temp = temp.replace(notpresent.value+',',"");
+                    document.getElementById('abscent-class-c').innerHTML=temp;
+                }
+                else if(notpresent.checked==false){
+                    document.getElementById('abscent-class-c').innerHTML+=notpresent.value+',';
                 }
             }
-            for(i=201;i<285;i++){
-                if((i)%3==0){
-                    document.getElementById("class-b").innerHTML+="<br/>";
-                }
-                document.getElementById("class-b").innerHTML+='<input type="checkbox" name="b" value ='+i+' checked onclick="AB(this)">'+i+"&emsp;&nbsp;";
-            }
-            for(i=301;i<385;i++){
-                if((i-1)%3==0){
-                    document.getElementById("class-c").innerHTML+="<br/>";
-                }
-                document.getElementById("class-c").innerHTML+='<input type="checkbox" name="c" value ='+i+' checked onclick="AB(this)">'+i+"&emsp;&nbsp;";
-            }
-            //old old old
-            // if(notpresent.checked==false){
-            //     if(notpresent.name=='a'){
-            //         temp = document.getElementById("abscent-class-a");
-            //         temp.innerHTML+=notpresent.value+",";
-            //     }
-            //     else if(notpresent.name=='b'){
-            //         temp = document.getElementById("abscent-class-b");
-            //         temp.innerHTML+=notpresent.value+",";
-            //     }
-            //     else if(notpresent.name=='c'){
-            //         temp = document.getElementById("abscent-class-c");
-            //         temp.innerHTML+=notpresent.value+",";
-            //     }
-            // }
-            // else{
-            //     if(notpresent.name=='a'){
-            //         temp = document.getElementById("abscent-class-a");
-            //         temp.innerHTML -= notpresent.value;
-            //     }
-            //     else if(notpresent.name=='b'){
-            //         temp = document.getElementById("abscent-class-b");
-            //         temp.innerHTML -= notpresent.value;
-            //     }
-            //     else if(notpresent.name=='c'){
-            //         temp = document.getElementById("abscent-class-c");
-            //         temp.innerHTML -= notpresent.value;
-            //     }
-            // }
         }
         function chkunchk(){
             temp = document.getElementById("checkuncheck");
             if(temp.innerHTML == 'CheckAll'){
                 temp.innerHTML = 'UncheckAll';
                 newtemp = document.getElementsByTagName("input");
+                a = document.getElementById('abscent-class-a');
                 for(i=0;i<newtemp.length;i++){
-                    newtemp[i].checked = true
+                    newtemp[i].checked = true;
+                    a = a.replace(newtemp.value+',',"");
                 }
             }
             else{
