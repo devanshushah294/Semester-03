@@ -79,7 +79,6 @@ public class PreFix {
             }
             else if(ch==')'){
                 while(s1.getTop()!='(' && s1.top!=-1){
-
                     postfixOperation+=s1.pop();
                 }
                 s1.pop();
