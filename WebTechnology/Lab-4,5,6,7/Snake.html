@@ -18,7 +18,6 @@
 	<table>
 		<tr>
 			<td>
-				<!-- <input type="button" id="left" value="go Left" name="" onclick="goLeft()"> -->
                 <button id="left" onclick="startCounter(this)">goLeft</button>
 			</td>
 			<td>
@@ -39,7 +38,6 @@
 
 		<script type="text/javascript">
             c = setInterval(goLeft,100);
-            temp=1;
             function startCounter(texto){
                 clearInterval(c);
                 if(texto.innerHTML == 'goLeft'){
