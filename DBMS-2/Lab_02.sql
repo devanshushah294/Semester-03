@@ -71,14 +71,29 @@ use Employee_Info;
 --15. Display city wise maximum salary.
 	Select City ,Max(salary) as 'MaximumSalary'
 	from Employee
-	group by City
+	group by City;
 
 --16. Produce output like <Ename> works at <city> and earns <salary> (In single column).
 	select RTrim(EName) + ' works at ' + City + ' and earns ' + Cast(Salary as varchar) as 'WorkingStatus'
-	from Employee
+	from Employee;
 --17. Find total number of employees whose salary is more than 5000.
+	Select count(EID) 
+	from Employee 
+	where Salary>5000;
+
 --18. Write a query to display first 4 & last 3 characters of all the employees.
+	Select SUBSTRING(EName,1,4) as 'First4', SUBSTRING(EName,len(Ename)-2,3) as 'Last3'
+	From Employee
+	
+	Select left(Ltrim(EName),4) as 'First4', right(RTrim(EName),3) as 'Last3'
+	from Employee;
+
 --19. List the city having total salaries more than 15000 and employees joined after 1st January, 2014.
+	Select Sum(Salary) as 'sal',City
+	from Employee 
+	Group by City
+	having Sum(Salary)>15000;
+
 --20. Write a query to replace “u” with “oo” in Ename.
 --21. Display city with average salaries and total number of employees belongs to each city.
 --22. Display total salaries paid to female employees.
