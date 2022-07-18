@@ -76,6 +76,7 @@ use Employee_Info;
 --16. Produce output like <Ename> works at <city> and earns <salary> (In single column).
 	select RTrim(EName) + ' works at ' + City + ' and earns ' + Cast(Salary as varchar) as 'WorkingStatus'
 	from Employee;
+
 --17. Find total number of employees whose salary is more than 5000.
 	Select count(EID) 
 	from Employee 
@@ -83,7 +84,7 @@ use Employee_Info;
 
 --18. Write a query to display first 4 & last 3 characters of all the employees.
 	Select SUBSTRING(EName,1,4) as 'First4', SUBSTRING(EName,len(Ename)-2,3) as 'Last3'
-	From Employee
+	From Employee;
 	
 	Select left(Ltrim(EName),4) as 'First4', right(RTrim(EName),3) as 'Last3'
 	from Employee;
@@ -95,13 +96,44 @@ use Employee_Info;
 	having Sum(Salary)>15000;
 
 --20. Write a query to replace “u” with “oo” in Ename.
+	Select Replace(EName,'u','oo') as 'ReplaceEname'
+	from Employee;
+
 --21. Display city with average salaries and total number of employees belongs to each city.
+	Select AVG(Salary) as 'AverageSalary',count(EID) as 'NumberOfEmployee', City
+	from Employee
+	group by City;
+
 --22. Display total salaries paid to female employees.
+	Select SUM(Salary) as 'TotalSalaryToFemale'
+	from Employee
+	Where Gender = 'female';
+
 --23. Display name of the employees and their experience in years.
+	Select DATEDIFF(year,JoiningDate,getdate()),EName
+	from Employee;
+
 --24. Remove column department from employee table.
+	Alter Table Employee Drop column Department;
+
 --25. Update the value of city from syndey to null.
+	Update Employee Set City = null
+	Where city = 'Syndey';
+
 --26. Retrieve all Employee name, Salary & Joining date.
+	Select EName,Salary,JoiningDate
+	from Employee;
+
 --27. Find out combine length of Ename & Gender.
+	Select len(EName)+len(Gender)
+	from Employee;
+
 --28. Find the difference between highest & lowest salary.
+	Select Max(Salary)-Min(Salary)
+	from Employee;
+
 --29. Rename a column from Ename to FirstName.
---30. Rename a table from Employee to EmpMaster.
+	SP_Rename 'Employee.EName' , 'FirstName';	
+
+--30. Rename a table from Employee to EmpMaster.
+	SP_Rename 'Employee','EmpMaster';
