@@ -22,20 +22,20 @@ Insert into Person Values (110,'Mohit Maru', 5, 14000, '2000-05-25', 'Jamnagar')
 --1. Find all persons with their department name & code. 
 	Select PersonName,DepartmentCode,DepartmentCode
 	from Person inner join Department
-	on person.DepartmentId = department.DepartmentID
+	on person.DepartmentId = department.DepartmentID;
 
 --2. Give department wise maximum & minimum salary with department name.
 	Select Max(Person.Salary) as 'MaximumSalary',min(person.Salary) as 'MinimumSalary',DepartmentName
 	from Person inner join Department
 	on person.DepartmentId = department.DepartmentID
-	group by DepartmentName
+	group by DepartmentName;
 
 --3. Find all departments whose total salary is exceeding 100000.
 	Select Sum(Person.salary),DepartmentName
 	from Person inner join Department
 	on person.DepartmentId = department.DepartmentID
 	group by DepartmentName
-	having Sum(Person.salary)>100000
+	having Sum(Person.salary)>100000;
 
 --4. Retrieve person name, salary & department name who belongs to Jamnagar city.
 	Select PersonName,Salary,DepartmentName
@@ -47,24 +47,24 @@ Insert into Person Values (110,'Mohit Maru', 5, 14000, '2000-05-25', 'Jamnagar')
 	Select PersonName
 	from Person left outer join Department
 	on person.DepartmentId = department.DepartmentID
-	where departmentName is null
+	where departmentName is null;
 
 --6. Find department wise person counts.
 	Select count(person.personID),DepartmentName
 	from Person inner join Department
 	on person.DepartmentId = department.DepartmentID
-	group by DepartmentName
+	group by DepartmentName;
 
 --7. Find average salary of person who belongs to Ahmedabad city.
 	Select Avg(Salary),city
 	from Person
 	group by city
-	having city = 'ahmedabad'
+	having city = 'ahmedabad';
 
 --8. Produce Output Like: <PersonName> earns <Salary> from department <DepartmentName> monthly.(In single column)
 	Select PersonName+' earns '+cast(Salary as varchar)+' from Department '+Departmentname
 	from Person inner join Department
-	on person.DepartmentId = department.DepartmentID
+	on person.DepartmentId = department.DepartmentID;
 
 --9. List all departments who have no persons.
 	Select Departmentname
@@ -80,7 +80,7 @@ Insert into Person Values (110,'Mohit Maru', 5, 14000, '2000-05-25', 'Jamnagar')
 			city
 	from Person inner join Department
 	on person.DepartmentId = department.DepartmentID
-	group by city
+	group by city;
 
 	Select	Sum(person.Salary) as 'TotalSalary',
 			Avg(person.Salary) as 'AverageSalary',
@@ -88,7 +88,7 @@ Insert into Person Values (110,'Mohit Maru', 5, 14000, '2000-05-25', 'Jamnagar')
 			DepartmentName
 	from Person inner join Department
 	on person.DepartmentId = department.DepartmentID
-	group by DepartmentName
+	group by DepartmentName;
 
 --11. Display Unique city names.
 	Select Distinct(city) from person;
@@ -98,16 +98,17 @@ Insert into Person Values (110,'Mohit Maru', 5, 14000, '2000-05-25', 'Jamnagar')
 	from Person inner join Department
 	on person.DepartmentId = department.DepartmentID
 	group by DepartmentName
-	having Count(person.personId)>2
+	having Count(person.personId)>2;
 
-
-13. Combine person name’s first three characters with city name’s last three characters in single column.
+--13. Combine person name’s first three characters with city name’s last three characters in single column.
 	Select Substring(PersonName,1,3)+' '+Substring(city,len(city)-2,3)
-	from person
+	from person;
 
 --14. Give 10% increment in Computer department employee’s salary.
 	Update Person Set Salary = Salary - (0.1)*Salary
-	where departmentid=(SELECT DEPARTMENTID FROM DEPARTMENT WHERE DEPARTMENTNAME='COMPUTER')
+	where departmentid=(SELECT DEPARTMENTID FROM DEPARTMENT WHERE DEPARTMENTNAME='COMPUTER');
 
 --15. Display all the person name’s who’s joining dates difference with current date is more than 365 days.
-	Select 
+	Select PersonName
+	from Person
+	where DateDiff(Day,JoiningDate,getDate())>365;
