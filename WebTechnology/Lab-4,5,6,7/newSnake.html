@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+</head>
+<body  onkeydown="runSnake()">
+    
+    <div style="border:5px solid black ; position: absolute; top: 0px; left: 0px;" id="mainContainer"></div>
+    <img src="snakeimg.gif" style=" position: absolute;width: 100px;height: 100px;border: 3px solid #73AD21;"id="snakeid">
+    <img src="snakefood.png" style="position: absolute;width: 20px;height: 20px;" id="food">
+    <div id="scoreBoard" style="position: absolute;" ><h1>score : </h1><h2 id="scorecount">0</h2></div>
+    <div id="lifeBoard" style="position: absolute;" ><h1>life : </h1><h2 id="lifecount">3</h2></div>
+
+    <script>
+        let temp, scorecounter=0, lifecounter=3;
+        document.getElementById('scoreBoard').style.top=(screen.height)*0.60+'px';
+        document.getElementById('lifeBoard').style.top=(screen.height)*0.60+'px';
+        document.getElementById('lifeBoard').style.left=(screen.width)*0.50+'px';
+
+        let contain = document.getElementById("mainContainer").style;
+        contain.width=(screen.width)*0.75+'px';
+        contain.height=(screen.height)*0.60+'px';;
+
+        let foodPosition = document.getElementById("food").style;
+        let foodLeft=(Math.random())*((screen.width)*0.73);
+        let foodTop=(Math.random())*((screen.height)*0.58);
+        foodPosition.left =foodLeft+'px';
+        foodPosition.top =foodTop+'px';
+
+        let snakePosition = document.getElementById("snakeid");
+        let rightPosition=(Math.random())*((screen.width)*0.50);
+        let topPosition=(Math.random())*((screen.height)*0.40);
+        snakePosition.style.left =rightPosition+'px';
+        snakePosition.style.top =topPosition+'px';
+
+        function foodPositionChange(){
+            foodLeft=(Math.random())*((screen.width)*0.73);
+            foodTop=(Math.random())*((screen.height)*0.58);
+            foodPosition.left =foodLeft+'px';
+            foodPosition.top =foodTop+'px';
+            scorecounter++;
+            document.getElementById('scorecount').innerHTML=scorecounter;
+        }
+
+        function reduceLife(){
+            clearInterval(temp)
+            lifecounter--;
+            if(lifecounter<1){
+                document.write('<h1>GameOver<h1> <h2>Your Score : '+scorecounter+'<h2>')
+            }
+            document.getElementById('lifecount').innerHTML=lifecounter;
+        }
+
+        function runSnake(){
+           
+            document.onkeydown = (e)=>{
+                clearInterval(temp)
+                switch (e.keyCode) {
+                    case 37:
+                        leftwalk = setInterval(runLeft,10)
+                        temp= leftwalk
+                        break;
+                    case 38:
+                        upwalk = setInterval(runTop,10);
+                        temp=upwalk
+                        break;
+                    case 39:
+                        rightwalk = setInterval(runRight,10)
+                        temp=rightwalk
+                        break;
+                    case 40:
+                        downwalk = setInterval(runDown,10)
+                        temp=downwalk
+                        break;
+                }
+            }
+        }
+
+        function runRight(){
+            rightPosition++;
+            snakePosition.style.left= rightPosition+'px'
+            if(parseInt(foodLeft)==(parseInt(rightPosition)+100)){
+                if(parseInt(foodTop)-parseInt(topPosition)>-20 &&parseInt(foodTop)-parseInt(topPosition)<101){
+                    foodPositionChange()
+                }
+            }
+            if(rightPosition+100>=(screen.width)*0.75){
+                life();
+            }
+        }
+
+        function runLeft(){
+            rightPosition--;
+            snakePosition.style.left= rightPosition+'px'
+            if(parseInt(foodLeft)+20==(parseInt(rightPosition))){
+                if(parseInt(foodTop)-parseInt(topPosition)>-20 &&parseInt(foodTop)-parseInt(topPosition)<101){
+                    foodPositionChange()
+                }
+            }
+            if(rightPosition<=0){
+                life();
+            }
+        }
+
+        function runTop(){
+            topPosition--;
+            snakePosition.style.top= topPosition+'px'
+            if(parseInt(foodTop)+20==(parseInt(topPosition))){
+                if(parseInt(foodLeft)-parseInt(rightPosition)>=-20 &&parseInt(foodLeft)-parseInt(rightPosition)<101){
+                    foodPositionChange()
+                }
+            }
+            if(topPosition<=0){
+                life();
+            }
+        }
+
+        function runDown(){
+            topPosition++;
+            snakePosition.style.top= topPosition+'px'
+            if(parseInt(foodTop)==(parseInt(topPosition))+100){
+                if(parseInt(foodLeft)-parseInt(rightPosition)>=-20 &&parseInt(foodLeft)-parseInt(rightPosition)<101){
+                    foodPositionChange()
+                }
+            }
+            if(topPosition+100>=(screen.height)*0.60){
+                reduceLife();
+            }
+        }
+    </script>
+</body>
+</html>
