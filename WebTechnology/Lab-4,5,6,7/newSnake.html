@@ -16,6 +16,7 @@
 
     <script>
         let temp, scorecounter=0, lifecounter=3;
+        speed = 10;
         document.getElementById('scoreBoard').style.top=(screen.height)*0.60+'px';
         document.getElementById('lifeBoard').style.top=(screen.height)*0.60+'px';
         document.getElementById('lifeBoard').style.left=(screen.width)*0.50+'px';
@@ -42,6 +43,8 @@
             foodPosition.left =foodLeft+'px';
             foodPosition.top =foodTop+'px';
             scorecounter++;
+            console.log(speed);
+            speed /= 10;
             document.getElementById('scorecount').innerHTML=scorecounter;
         }
 
@@ -60,19 +63,23 @@
                 clearInterval(temp)
                 switch (e.keyCode) {
                     case 37:
-                        leftwalk = setInterval(runLeft,10)
+                        console.log("onturning speed: "+speed );
+                        leftwalk = setInterval(runLeft,speed);
                         temp= leftwalk
                         break;
                     case 38:
-                        upwalk = setInterval(runTop,10);
+                    console.log("onturning speed: "+speed );
+                        upwalk = setInterval(runTop,speed);
                         temp=upwalk
                         break;
                     case 39:
-                        rightwalk = setInterval(runRight,10)
+                    console.log("onturning speed: "+speed );
+                        rightwalk = setInterval(runRight,speed)
                         temp=rightwalk
                         break;
                     case 40:
-                        downwalk = setInterval(runDown,10)
+                    console.log("onturning speed: "+speed );
+                        downwalk = setInterval(runDown,speed)
                         temp=downwalk
                         break;
                 }
@@ -84,7 +91,7 @@
             snakePosition.style.left= rightPosition+'px'
             if(parseInt(foodLeft)==(parseInt(rightPosition)+100)){
                 if(parseInt(foodTop)-parseInt(topPosition)>-20 &&parseInt(foodTop)-parseInt(topPosition)<101){
-                    foodPositionChange()
+                    foodPositionChange();
                 }
             }
             if(rightPosition+100>=(screen.width)*0.75){
@@ -97,7 +104,7 @@
             snakePosition.style.left= rightPosition+'px'
             if(parseInt(foodLeft)+20==(parseInt(rightPosition))){
                 if(parseInt(foodTop)-parseInt(topPosition)>-20 &&parseInt(foodTop)-parseInt(topPosition)<101){
-                    foodPositionChange()
+                    foodPositionChange();
                 }
             }
             if(rightPosition<=0){
@@ -110,7 +117,7 @@
             snakePosition.style.top= topPosition+'px'
             if(parseInt(foodTop)+20==(parseInt(topPosition))){
                 if(parseInt(foodLeft)-parseInt(rightPosition)>=-20 &&parseInt(foodLeft)-parseInt(rightPosition)<101){
-                    foodPositionChange()
+                    foodPositionChange();
                 }
             }
             if(topPosition<=0){
@@ -123,7 +130,7 @@
             snakePosition.style.top= topPosition+'px'
             if(parseInt(foodTop)==(parseInt(topPosition))+100){
                 if(parseInt(foodLeft)-parseInt(rightPosition)>=-20 &&parseInt(foodLeft)-parseInt(rightPosition)<101){
-                    foodPositionChange()
+                    foodPositionChange();
                 }
             }
             if(topPosition+100>=(screen.height)*0.60){
