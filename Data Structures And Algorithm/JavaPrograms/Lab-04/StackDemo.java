@@ -68,8 +68,7 @@ public class StackDemo {
         Stack stk1 = new Stack();
         stk1.push();
         int n = stk1.pop();
+        System.out.println("the removed element is"+n);
         stk1.peep();
-
     }
-
 }
