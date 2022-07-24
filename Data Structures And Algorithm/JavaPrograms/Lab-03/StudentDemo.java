@@ -20,6 +20,7 @@ class Student_Detail{
         System.out.println("Enter the cpi : ");
         cpi = sc.nextDouble();
         sc.close();
+        sc2.close();
     }
 
     //methods
