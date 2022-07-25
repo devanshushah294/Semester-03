@@ -1,9 +1,9 @@
 // Write a program to swap two numbers using user-defines method.s
 import java.util.Scanner;
 class Swap{    
+    Scanner sc = new Scanner(System.in);
     int n1,n2;
     public Swap(){
-        Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number 1 : ");
         n1 = sc.nextInt();
         System.out.println("Enter the number 2 : ");
