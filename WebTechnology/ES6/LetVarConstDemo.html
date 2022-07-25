@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var keyword started
+        var i = 2;
+        console.log("i = "+i);
+        // let variable can be redeclared let j = 25;
+        var i = 1;
+        console.log("i = "+i);
+        {
+            var i = 25;
+        }
+        console.log("i = "+i)
+        // var keyword over
+
+        // let keyword started
+        let j = 25;
+        console.log("j = "+j);
+        // let variable cant be redeclared let j = 25;
+        //but we can change it for example
+        j = 26;
+        console.log("j = "+j);
+        {
+            // also it can be redeclared in th block once then in will not the value of outside j
+            let j = 25;
+            console.log("j = "+j);
+            j = 36; //now it will change the value of local j and global j can't be access
+            console.log("j = "+j);
+        }
+        console.log("j = "+j);
+        // let keyword over
+
+        // const keyword started
+        const k = 35;
+        console.log("k = "+k);
+        {
+            // const variable can be redeclared in another block 
+            // let k =24;
+            // const k = 56;
+            console.log("k = "+k);
+        }
+        // const variable can't be redeclared in another block for example
+        // const k =25 will throw an error
+        console.log("k = "+k);
+        </script>
+</body>
+</html>

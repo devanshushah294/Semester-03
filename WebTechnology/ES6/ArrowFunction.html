@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="answer">Answer = </h1>
+    <script>
+        let h = document.getElementById('answer');
+        let a = 20;
+        let b = 30; 
+        let c = (a,b) => a*b;
+        // or
+        c = (a,b) => {
+            return a*b;
+        }
+        h.innerHTML += c(a,b);
+
+    </script>
+</body>
+</html>
