@@ -1,47 +1,62 @@
 class LinkedList {
-    public static class Node {
+    Node head;
+    class Node {
         int number;
 		Node next;
-		public Node(int n){
+        public Node(int n){
             this.number = n;
 			this.next = null;
-		}
-	}
-    static Node head;
-
-	public void insert(int number){
-		Node newNode = new Node(number);
-		if (head == null) {
-			head = newNode;
-		}
-        else{
-            newNode.next = head;
-            head = newNode;
         }
-	}
-
-	public static void printList() {
-		Node currentNode = head;
-		System.out.print("LinkedList: ");
-		while(currentNode != null) {
-			System.out.print(currentNode.number+" ");
-			currentNode = currentNode.next;
-		}
-	}
-}
-
-public class BasicLinkedList{
-    public static void main(String[] args){
-        LinkedList list = new LinkedList();
-        LinkedList.Node newlist = list.new Node(1);
-        list.insert(2);
-        list.insert(3);
-        list.insert(4);
-        list.insert(5);
-        list.insert(6);
-        list.insert(7);
-        list.insert(8);
-        list.printList();
+        public Node getNext() {
+            return next;
+        }
+        public int getNumber() {
+            return number;
+        }
     }
-}
+    public int getHeadNumber(){
+        return head.number;
+    }
+    public void insertNumberFromFirst(int number){
+        Node newNode = new Node(number); 
+        newNode.next = head;
+        head = newNode;
+    }
 
+    public void insertNumberFromLast(int number){
+        Node newNode = new Node(number);
+        if(head == null){
+            head = newNode;
+            return;
+        }
+        Node currentNode = head;
+        while(currentNode.next != null){
+            currentNode = currentNode.next;
+        }
+        currentNode.next = newNode;
+
+    }
+
+    public void printLL(){
+        if(head == null) {
+            System.out.println("List is Empty");
+            return;
+        }
+        Node currentNode = head;
+        while (currentNode != null){
+            System.out.print(currentNode.number+"->");
+            currentNode = currentNode.next;
+        }
+        System.out.println("NULL");
+    }
+
+    public static void main(String[] args) {
+        LinkedList ll = new LinkedList();
+        ll.insertNumberFromFirst(25);
+        ll.insertNumberFromLast(36);
+        ll.insertNumberFromLast(96);
+        ll.printLL();
+    }
+
+}
+    
