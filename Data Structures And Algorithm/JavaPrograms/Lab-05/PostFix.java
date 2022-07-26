@@ -33,7 +33,7 @@ class Stack{
     }
 }
 
-public class PostFixBasic {
+public class PostFix {
     public static int checkPrecedence(char operator){
         int operatorPrecedence = 0;    
         switch(operator){

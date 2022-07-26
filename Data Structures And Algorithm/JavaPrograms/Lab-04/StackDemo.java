@@ -32,7 +32,7 @@ class Stack{
     public int pop(){
         if(top<0){
             System.out.println("Sorry! no element to remove");
-            return 1;
+            return top;
         }else{
             top--;
             return Stack[top+1];
