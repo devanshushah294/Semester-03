@@ -49,7 +49,8 @@ class LinkedList {
         }
         System.out.println("NULL");
     }
-
+}
+public class BasicLinkedList{
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         ll.insertNumberFromFirst(25);
@@ -57,6 +58,6 @@ class LinkedList {
         ll.insertNumberFromLast(96);
         ll.printLL();
     }
-
 }
+
     
