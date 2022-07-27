@@ -1,77 +1,106 @@
-class Node{
-	int data;
-	Node next;
+class Node {
+    int number;
+    Node next;
+    public Node(int n){
+        this.number = n;
+        this.next = null;
+    }
 }
-class LList{
- 	Node head;
- 		public void insert(int data){
- 			Node node =new Node();
- 			node.data=data;
- 				if (head==null) {
- 					head=node;
- 				}
- 				else{
- 					Node n=head;
- 					while(n.next!=null){
- 						n=n.next;
- 					}
- 					n.next=node;
- 				}
- 		}
- 		public void show(){
- 			Node node=head;
- 				while(node.next!=null){
- 					System.out.println(node.data);	
- 					node=node.next;
- 				}
-			System.out.println(node.data);
- 		}
- 		public void insertAtHead(int data){
- 			Node node =new Node();
- 			node.data= data;
- 			node.next=head;
- 			head=node;
- 		}
- 		public void addAt(int index,int data){
- 			Node node =new Node();
- 			node.data= data;
- 			Node n=head;
- 			if (index==0){
- 				insertAtHead(data);
- 			}
- 			else{
- 			 	for(int i=0;i<index-1;i++) {
- 			 		n=n.next;
- 			 	}
- 			 	node.next=n.next;
- 				n.next=node;
- 			}
- 		}
- 		public void deleteAt(int index){
- 			if(index==0){
- 				head=head.next;
- 			}
- 			else{
- 				Node n=head;
- 				Node n1=null;
- 				for (int i=0;i<index-1 ;i++ ) {
- 					n=n.next;
- 				}
- 				n1=n.next;
- 				n.next=n1.next;
- 				n1=null;
- 			}
- 		}
+class LinkedList {
+    Node head;
+    public int getHeadNumber(){
+        if(head == null){
+            return -1;
+        }
+        return head.number;
+    }
+    public void insertNumberFromFirst(int number){
+        Node newNode = new Node(number); 
+        newNode.next = head;
+        head = newNode;
+    }
+
+    public void insertNumberFromLast(int number){
+        Node newNode = new Node(number);
+        if(head == null){
+            head = newNode;
+            return;
+        }
+        Node currentNode = head;
+        while(currentNode.next != null){
+            currentNode = currentNode.next;
+        }
+        currentNode.next = newNode;
+
+    }
+
+    public void printLL(){
+        if(head == null) {
+            System.out.println("List is Empty");
+            return;
+        }
+        Node currentNode = head;
+        while (currentNode != null){
+            System.out.print(currentNode.number+"->");
+            currentNode = currentNode.next;
+        }
+        System.out.println("NULL");
+    }
+
+    public Node deleteFromFront(int indexFromFront){
+        if(head == null){
+            return head;
+        }
+        Node currentNode = head;
+        for(int i = 1; i<indexFromFront-1; i++){
+            currentNode = currentNode.next;
+        }
+        Node returnNode = currentNode.next; 
+        if(returnNode == head){
+            head = head.next;
+        }
+        else{
+            currentNode.next=currentNode.next.next;
+        }
+        return returnNode;
+    }
+
+    public Node deleteLastElement(){
+        if(head == null){
+            return head;
+        }
+        Node currentNode = head;
+        while(currentNode.next.next!=null){
+            currentNode = currentNode.next;
+        }
+        Node returnNode = currentNode.next;
+        if(returnNode == head){
+            head = null;
+        }
+        else{
+            currentNode.next = currentNode.next.next;
+        } 
+        return returnNode;
+    }
 }
 public class LinkedListBySaperateClass{
-	public static void main(String[] args) {
-		LList li=new LList();
-		li.insert(5);
-		li.insert(1);
-		li.insert(35);
-		li.addAt(2,44);
-		li.deleteAt(2);
-		li.insertAtHead(66);
-		li.show();
-	}
+    public static void main(String[] args) {
+        LinkedList ll = new LinkedList();
+        ll.insertNumberFromLast(1);
+        ll.insertNumberFromLast(2);
+        ll.insertNumberFromLast(3);
+        ll.insertNumberFromLast(4);
+        ll.insertNumberFromLast(5);
+        ll.insertNumberFromLast(6);
+        ll.insertNumberFromLast(9);
+        ll.insertNumberFromLast(7);
+        ll.insertNumberFromLast(8);
+        ll.printLL();
+        ll.insertNumberFromLast(ll.deleteFromFront(7).number);
+        ll.insertNumberFromFirst(0);
+        ll.deleteLastElement();
+        ll.deleteLastElement();
+        ll.printLL();
+
+    }
 }

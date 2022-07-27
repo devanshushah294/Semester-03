@@ -1,13 +1,13 @@
+class Node {
+    int number;
+    Node next;
+    public Node(int n){
+        this.number = n;
+        this.next = null;
+    }
+}
 class LinkedList {
     Node head;
-    class Node {
-        int number;
-		Node next;
-        public Node(int n){
-            this.number = n;
-			this.next = null;
-        }
-    }
     public int getHeadNumber(){
         if(head == null){
             return -1;
@@ -51,10 +51,6 @@ class LinkedList {
         if(head == null){
             return head;
         }
-        if(head.next==null){
-            head=null;
-            return head;
-        }
         Node currentNode = head;
         for(int i = 1; i<indexFromFront-1; i++){
             currentNode = currentNode.next;
@@ -73,6 +69,10 @@ class LinkedList {
         if(head == null){
             return head;
         }
+        if(head.next==null){
+            head=null;
+            return head;
+        }
         Node currentNode = head;
         while(currentNode.next.next!=null){
             currentNode = currentNode.next;
@@ -87,26 +87,28 @@ class LinkedList {
         return returnNode;
     }
 }
-public class BasicLinkedList{
-    public static void main(String[] args) {
-        LinkedList ll = new LinkedList();
-        ll.insertNumberFromLast(1);
-        ll.insertNumberFromLast(2);
-        ll.insertNumberFromLast(3);
-        ll.insertNumberFromLast(4);
-        ll.insertNumberFromLast(5);
-        ll.insertNumberFromLast(6);
-        ll.insertNumberFromLast(9);
-        ll.insertNumberFromLast(7);
-        ll.insertNumberFromLast(8);
-        ll.printLL();
-        ll.insertNumberFromLast(ll.deleteFromFront(7).number);
-        ll.insertNumberFromFirst(0);
-        ll.deleteLastElement();
-        ll.deleteLastElement();
-        ll.printLL();
 
+class Stack {
+    LinkedList ll = new LinkedList();
+    Node top;
+    public void push(int n){
+        ll.insertNumberFromLast(n);
+    }
+    public void pop(){
+        ll.deleteLastElement();
+    }
+    public void displayStack(){
+        ll.printLL();
+    }
+
+}
+public class StackUsingLinkedList{
+    public static void main(String[] args) {
+        Stack stk = new Stack();
+        stk.push(25);
+        // stk.push(36);
+        // stk.push(85);
+        stk.pop();
+        stk.displayStack();
     }
 }
-
-    
