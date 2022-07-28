@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		// Step - 01
+		/*setInterval(printHi,500);
+		function printHi(){
+			console.log("hi");
+		}*/
+
+		//setInterval(()=>{console.log('hi')},500);
+
+		//Step - 02
+		/*let name = prompt('Enter Name');
+		setInterval(printName,500);
+		function printName(n){
+			console.log(n);
+		}*/
+		/*let name = prompt('Enter Name');
+		setInterval(()=>{
+			printName(name);
+		},500);
+
+		function printName(n){
+			console.log(n);
+		}*/
+
+		const faculty1 = 
+		{
+			FacultyName:"arjun",
+			FacultyAge:99,
+			FacultyEmail:"arjun.bala@dar.ac.in",
+			printMe:()=>{
+				console.log("Hiiii");
+			},
+			printMeMany:(n,whatToPrint)=>{
+				for(let i=0;i<n;i++){
+					console.log(whatToPrint);	
+				}
+			}
+		}
+
+		faculty1.printMeMany(5,"arjun");
+	</script>
+</body>
+</html>

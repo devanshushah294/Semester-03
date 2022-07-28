@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		students = 
+		[
+			{city:"rajkot",	name:"arjun",	spi:5.8},
+			{city:"morbi",	name:"bala",	spi:9.8},
+			{city:"rajkot",	name:"xyz",		spi:2.8},
+			{city:"surat",	name:"abc",		spi:1.5},
+		];
+
+		/*for(i=0;i<students.length;i++){
+			console.log(students[i].name);
+		}*/
+
+		formatedStudent = students.map((stu)=>{
+			return "<li>"+"My name is "+stu.name+". I am living in "+stu.city+". I got "+stu.spi+"." +"</li>"
+		})
+
+		document.write("<ul>");
+		document.write(formatedStudent);
+		document.write("</ul>");
+		
+	</script>
+</body>
+</html>

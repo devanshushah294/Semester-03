@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		const faculty1 = 
+		{
+			FacultyName:"arjun",
+			FacultyAge:99,
+			FacultyEmail:"arjun.bala@dar.ac.in",
+			printMe:function(){
+				console.log("name =",this.FacultyName," age = ",this.FacultyAge)
+			}
+		}
+		const faculty2 =
+		{
+			FacultyName:"abc",
+			FacultyAge:22,
+			FacultyEmail:"asdf@dar.ac.in",
+			printMe:function(){
+				console.log("name =",this.FacultyName," age = ",this.FacultyAge)
+			}
+		}
+		faculty1.FacultyAge = 20;
+		faculty1.printMe();
+
+		faculty2.FacultyAge = 88;
+		faculty2.printMe();
+		
+	</script>
+</body>
+</html>

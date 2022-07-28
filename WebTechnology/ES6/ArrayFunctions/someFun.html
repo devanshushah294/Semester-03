@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		students = 
+		[
+			{city:"rajkot",name:"arjun",spi:5.8},
+			{city:"morbi",name:"bala",spi:9.8},
+			{city:"rajkot",name:"xyz",spi:2.8},
+			{city:"surat",name:"abc",spi:1.5},
+		];
+
+		ans = students.every((stu)=>{
+			if(stu.spi>1){
+				return true;
+			}
+		});
+
+
+		console.log(ans);
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<h1 id="answer"></h1>
+	<script type="text/javascript">
+		answer = document.getElementById('answer').innerHTML;
+		students = 
+		[
+			{city:"rajkot",	name:"arjun",	spi:5.8},
+			{city:"morbi",	name:"bala",	spi:9.8},
+			{city:"rajkot",	name:"xyz",		spi:2.8},
+			{city:"surat",	name:"abc",		spi:1.5}
+		];
+
+		// for(i=0;i<students.length;i++){
+		// 	console.log(students[i].name);
+		// }
+
+		students.forEach(stu=>console.log(stu.city));
+		
+	</script>
+</body>
+</html>
