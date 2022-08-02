@@ -19,10 +19,10 @@
 			console.log(students[i].name);
 		}*/
 
-		formatedStudent = students.map((stu)=>{
+		let formatedStudent = students.map((stu)=>{
 			return "<li>"+"My name is "+stu.name+". I am living in "+stu.city+". I got "+stu.spi+"." +"</li>"
 		})
-
+		console.log(formatedStudent);
 		document.write("<ul>");
 		document.write(formatedStudent);
 		document.write("</ul>");
