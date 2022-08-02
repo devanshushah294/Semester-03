@@ -1,11 +1,10 @@
-Create Database WorkerInfo_355
-Use WorkerInfo_355
+Create Database Worker_Info
+Use Worker_Info
 
 Create Table Designation(
 	DesignationID		int				Primary Key	Identity(11, 1),
 	DesignationName		varchar(100)	Not Null	Unique
 )
-
 
 
 Create Table Department(
@@ -156,7 +155,7 @@ Insert into Person Values ('Neha', 'Trivedi', 18000, '2014-02-20', 3, 15)
 
 
 -- 2. All tables SelectAll (If foreign key is available than do write join and take columns on select list)\
-	Alter Procedure PR_AllTable_SelectAll
+	Create Procedure PR_AllTable_SelectAll
 	as
 	Begin
 	Select Person.WorkerID,Person.FirstName,Person.LastName,Person.Salary,Person.JoiningDate,Person.DepartmentId, Department.DepartmentName,Person.DesignationID,Designation.DesignationName from 
@@ -167,6 +166,31 @@ Insert into Person Values ('Neha', 'Trivedi', 18000, '2014-02-20', 3, 15)
 	exec PR_AllTable_SelectAll
 
 -- 3. All tables SelectPK
+	Create Procedure PR_Person_SelectByPrimaryKey
+	@WorkerID int
+	as
+	Begin
+	select * from Person
+	where person.WorkerID = @WorkerID;  
+	End
+
+
+-- All tables SelectPK
+	Create Procedure PR_Designation_SelectByPrimaryKey
+	@designationId int
+	as
+	Begin
+	select * from Designation
+	where DesignationID = @designationId;  
+	End
+
+	Create Procedure PR_Department_SelectByPrimaryKey
+	@departmentId int
+	as
+	Begin
+	select * from Department
+	where departmentId = @departmentId;  
+	End
 
 
 -- 4. Create Procedure that takes Department Name & Designation Name as Input and Returns a table with Worker’s First Name, Salary, Joining Date & Department Name.
@@ -197,7 +221,7 @@ Insert into Person Values ('Neha', 'Trivedi', 18000, '2014-02-20', 3, 15)
 	End
 	Exec getDetailsByFirstName 'Rahul';
 -- 6. Create Procedure which displays department wise maximum, minimum & total salaries.
-	Alter Procedure getDeptWiseSalaries
+	Create Procedure getDeptWiseSalaries
 	as
 	Begin
 		Select department.DepartmentName, max(person.salary) as 'Maximum Salary', min(person.salary) as 'Minimum Salary', sum(person.salary) as 'Total Salary' from 
