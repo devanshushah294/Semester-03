@@ -237,8 +237,56 @@ Insert into Person Values ('Neha', 'Trivedi', 18000, '2014-02-20', 3, 15)
 --• Views
 
 --1. Create a view that display first 100 workers details.
+	Create view displayFirst100Workers
+	as 
+	Select top 100 Person.WorkerID,Person.FirstName,Person.LastName,Person.JoiningDate,person.DepartmentID,Department.DepartmentName,person.DesignationID,Designation.DesignationName from
+	person inner join Department
+	on person.DepartmentID = Department.DepartmentID
+	inner join designation on Person.DesignationID = Designation.DesignationID;
 
 --2. Create a view that displays designation wise maximum, minimum & total salaries.
+	Create view designationWiseMaxMinTotalSalary
+	as
+	Select Designation.DesignationName, Max(Person.salary) as MaximumSalary ,Min(Person.salary) as MinimumSalary, sum(Person.salary) as totalSalary
+	from person inner join designation
+	on person.DesignationID = Designation.DesignationID
+	group by designation.designationName
+
 --3. Create a view that displays Worker’s first name with their salaries & joining date, it also displays duration column which is difference of joining date with respect to current date.
+	Create view workerSpecificDetails
+	as
+	Select FirstName, Salary, JoiningDate, Convert(varchar(100),DateDiff(YEAR,JoiningDate,GETDATE()))+' '+'Years' as WorkingSince from
+	Person
+
 --4. Create a view which shows department & designation wise total number of workers.
+
+	--View For Department
+	Create view DepartmentWiseWorkers
+	as
+	Select Department.DepartmentName, count(person.WorkerID) as 'NumberOfWorkers'  from
+	Person inner join Department
+	on Person.DepartmentID = Department.DepartmentID
+	group by Department.DepartmentName;
+
+	--View for Designation
+	Create view DesignationWiseWorkers
+	as
+	Select Designation.DesignationID, Designation.DesignationName,Count(Person.WorkerID) as 'NumberOfWorkers'  from
+	Person inner join Designation
+	on Person.DesignationID = Designation.DesignationID
+	group by Designation.DesignationID, Designation.DesignationName;
+
 --5. Create a view that displays worker names who don’t have either in any department or designation
+	Create view NotInDesignationOrNotInDepartment
+	as
+	Select FirstName from 
+	Person
+	where DesignationID is NULL or DepartmentID is NULL
+
+
+--1. Create a table valued function which accepts DepartmentID as a parameter & returns a worker table based on DepartmentID.
+
+--2. Create a table valued function which returns a table with unique city names from worker table.
+--3. Create a scalar valued function which accepts two parameters start date & end date, and returns a date difference in days.
+--4. Create a scalar valued function which accepts two parameters year in integer & month in integer and returns total days in passed month & year.
+--5. Create a scalar valued function which accepts two parameters year in integer & month in integer and returns first date in passed month & year
