@@ -285,7 +285,6 @@ Insert into Person Values ('Neha', 'Trivedi', 18000, '2014-02-20', 3, 15)
 
 
 --1. Create a table valued function which accepts DepartmentID as a parameter & returns a worker table based on DepartmentID.
-
 --2. Create a table valued function which returns a table with unique city names from worker table.
 --3. Create a scalar valued function which accepts two parameters start date & end date, and returns a date difference in days.
 --4. Create a scalar valued function which accepts two parameters year in integer & month in integer and returns total days in passed month & year.
