@@ -48,6 +48,8 @@ Insert into Person Values ('Rohit', 'Rajgor', 17000, '1990-07-23', 2, 15)
 Insert into Person Values ('Priya ', 'Mehta', 25000, '1990-10-18', 2, Null)
 Insert into Person Values ('Neha', 'Trivedi', 18000, '2014-02-20', 3, 15)
 
+
+-- • Stored Procedures
 -- 1. All tables Insert, Update & Delete
 
 --Designation Table
@@ -230,3 +232,13 @@ Insert into Person Values ('Neha', 'Trivedi', 18000, '2014-02-20', 3, 15)
 		group by departmentName
 	End
 	Exec getDeptWiseSalaries
+
+
+--• Views
+
+--1. Create a view that display first 100 workers details.
+
+--2. Create a view that displays designation wise maximum, minimum & total salaries.
+--3. Create a view that displays Worker’s first name with their salaries & joining date, it also displays duration column which is difference of joining date with respect to current date.
+--4. Create a view which shows department & designation wise total number of workers.
+--5. Create a view that displays worker names who don’t have either in any department or designation
