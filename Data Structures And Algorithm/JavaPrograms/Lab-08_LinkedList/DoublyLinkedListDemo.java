@@ -12,7 +12,22 @@ class DoublyLinkedList {
         }
     }
     Node head;
-    public void deleteFromFirst(){
+    public void deleteFromLast() {
+        if(head == null) {
+            System.out.println("The list is empty");
+            return;
+        }
+        else if(head.next == null){
+            head = null;
+            return;
+        }
+        Node currentNode = head;
+        while(currentNode.next != null) {
+            currentNode = currentNode.next;
+        }
+        currentNode.prev.next = null;
+    }
+    public void deleteFromFirst() {
         if(head == null){
             System.out.println("The list is empty");
             return;
@@ -70,9 +85,9 @@ public class DoublyLinkedListDemo{
         ll.insertFromLast(36);
         ll.insertFromFirst(85);
         ll.printLL();
-        ll.deleteFromFirst();
-        ll.deleteFromFirst();
-        ll.deleteFromFirst();
+        ll.deleteFromLast();
+        ll.deleteFromLast();
+        ll.deleteFromLast();
         ll.printLL();
     }
 }
