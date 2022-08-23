@@ -1,27 +1,39 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<title></title>
-</head>
-<body>
-	<h1 id="answer"></h1>
-	<script type="text/javascript">
-		answer = document.getElementById('answer').innerHTML;
-		students = 
-		[
-			{city:"rajkot",	name:"arjun",	spi:5.8},
-			{city:"morbi",	name:"bala",	spi:9.8},
-			{city:"rajkot",	name:"xyz",		spi:2.8},
-			{city:"surat",	name:"abc",		spi:1.5}
-		];
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+  <body>
+    <h1 id="answer"></h1>
+    <script type="text/javascript">
+      students = [
+        { city: "rajkot", name: "Divyank", spi: 5.8 },
+        { city: "morbi", name: "Mubin", spi: 9.8 },
+        { city: "rajkot", name: "xyz", spi: 2.8 },
+        { city: "Rajkot", name: "Devanshu", spi: 9.8 },
+        { city: "surat", name: "abc", spi: 1.5 },
+      ];
 
-		// for(i=0;i<students.length;i++){
-		// 	console.log(students[i].name);
-		// }
+      // for(i=0;i<students.length;i++){
+      // 	console.log(students[i].name);
+      // }
 
-		students.forEach(stu=>console.log(stu.city));
-		
-	</script>
-</body>
+      // here in this method the walue of answer is updating but it is not updated in the screen
+      // let answer = document.getElementById("answer").innerHTML;
+      // students.forEach((stu) => console.log(stu.city));
+      // students.forEach((stu) => {
+      //   answer += stu.name + "<br />";
+      //   console.log("hii");
+      // });
+
+      // here this problem is solved by updating it in for each method
+      let answer = document.getElementById("answer");
+      students.forEach((stu) => console.log(stu.city));
+      students.forEach((stu) => {
+        answer.innerHTML += stu.name + "<br />";
+        console.log("hii");
+      });
+    </script>
+  </body>
 </html>
