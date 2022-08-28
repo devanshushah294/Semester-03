@@ -1,0 +1,4 @@
+Create Database PersonInfo_02
+USE PersonInfo_02
+
+--2 Create a trigger that fires on INSERT, UPDATE and DELETE operation on the Person table. For that, create a new table PersonLog to log (enter) all operations performed on the Employee table.Alter TRIGGER tr_Person_Inserton Personfor Insertas Begindeclare @personID intdeclare @personName varchar(250)select @personID = PersonId,@personName = personName from inserted	Insert into PersonLog values (@personID,@personName,'Insert',getdate())EndInsert into Person values(1,'devanshu',10000,getdate(),'rajkot','21','04-29-2003')Select * from PersonLog
