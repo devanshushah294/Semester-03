@@ -12,6 +12,7 @@ class DoublyLinkedList {
         }
     }
     Node head;
+    
     public void deleteFromLast() {
         if(head == null) {
             System.out.println("The list is empty");
