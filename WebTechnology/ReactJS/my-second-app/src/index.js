@@ -10,29 +10,35 @@ import About from "./About";
 import Contact from "./Contact";
 import Footer from "./Footer";
 import Header from "./Header";
-import Department from "./department/Department";
+import Student from "./Student";
+import Schools from "./Schools";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
     {/* <App /> */}
     <Header />
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />}>
-            Home
+    <div style={{ height: "80vh" }}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />}>
+              Home
+            </Route>
+            <Route path="about" element={<About />}>
+              About
+            </Route>
+            <Route path="contact" element={<Contact />}>
+              Contact Us
+            </Route>
+            <Route path="schools" element={<Schools />}>
+              Schools
+            </Route>
+            <Route path="students" element={<Student />}></Route>
           </Route>
-          <Route path="about" element={<About />}>
-            About
-          </Route>
-          <Route path="contact" element={<Contact />}>
-            Contact Us
-          </Route>
-          <Route path="department" element={<Department />}></Route>
-        </Route>
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
+    </div>
     <Footer />
   </>
 );

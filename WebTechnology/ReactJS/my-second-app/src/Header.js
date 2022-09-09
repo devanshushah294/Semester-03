@@ -1,4 +1,4 @@
 const Header = () => {
-  return <div>Header here</div>;
+  return <div style={{ minHeight: "10vh" }}>Header here</div>;
 };
 export default Header;

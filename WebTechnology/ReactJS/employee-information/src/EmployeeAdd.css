@@ -1,0 +1,24 @@
+/* table,
+td {
+}
+td {
+  min-width: 2vw;
+  text-align: center;
+} */
+
+.dark-pink-color {
+  background-color: #57181e;
+  color: white;
+}
+.border-pink {
+  border: 1px solid black;
+}
+span {
+  width: 10vw;
+}
+.pink-background {
+  background-color: #ffc0cb;
+}
+.m-center {
+  margin-left: 45vw;
+}

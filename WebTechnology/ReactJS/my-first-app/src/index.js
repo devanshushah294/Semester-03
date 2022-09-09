@@ -1,22 +1,25 @@
-import React, { StrictMode } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
+// import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import Name from "./Faculties";
-// import { Fun } from "./Welcome";
+import UseEffectDemo from "./HooksLearning/UseEffectDemo";
+
+import { Fun } from "./ExtraFolder/Welcome";
 
 const rootElement = document.getElementById("root");
 const root = ReactDOM.createRoot(rootElement);
 root.render(
-  <StrictMode>
-    {/* <App /> */}
-    {/* <Fun /> */}
-    <Name />
-  </StrictMode>
+  <>
+    // <App />
+    <Fun />
+    // <HooksLearning1 />
+    // <HooksLearning2 />
+    // <UseEffectDemo />
+  </>
 );
 
-// If you want to start measuring performance in your app, pass a function
+/// If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// reportWebVitals();

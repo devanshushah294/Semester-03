@@ -1,0 +1,20 @@
+#header,
+#footer {
+  min-height: 10vh;
+}
+#outlet {
+  min-height: 80vh;
+}
+.display-flex {
+  display: flex;
+}
+.flex-direction-row-reverse {
+  flex-direction: row-reverse;
+}
+#header {
+  height: 398px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(https://www.darshan.ac.in/Content/media/bg/bg_1.jpg);
+}

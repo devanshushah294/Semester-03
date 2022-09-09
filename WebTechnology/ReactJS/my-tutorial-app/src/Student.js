@@ -1,4 +1,4 @@
-const Student = (props) => {
+export const Student = () => {
   const students = [
     {
       createdAt: "2022-08-04T12:07:14.676Z",
@@ -241,15 +241,15 @@ const Student = (props) => {
       id: "20",
     },
   ];
-  const name = students.map((stu) => {
+  const fire = students.map((stu) => {
     return (
-      <>
-        {stu.name} is from {stu.department}
-        <br />
-      </>
+      <img
+        src={stu.avatar}
+        style={{
+          margin: "4px",
+        }}
+      />
     );
   });
-  return name;
+  return <div>{fire}</div>;
 };
-
-export default Student;
