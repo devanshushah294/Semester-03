@@ -1,14 +1,6 @@
-/* table,
-td {
-}
-td {
-  min-width: 2vw;
-  text-align: center;
-} */
-
 .dark-pink-color {
-  background-color: #57181e;
-  color: white;
+  background-color: white;
+  color: #4682b4;
 }
 .border-pink {
   border: 1px solid black;
@@ -17,7 +9,7 @@ span {
   width: 10vw;
 }
 .pink-background {
-  background-color: #ffc0cb;
+  background-color: #4682b4;
 }
 .m-center {
   margin-left: 45vw;
@@ -34,4 +26,8 @@ span {
   margin: auto;
   position: relative;
   top: 10vh;
+}
+.hover-white:hover {
+  color: white;
+  background-color: #4682b4;
 }

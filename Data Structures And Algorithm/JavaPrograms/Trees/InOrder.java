@@ -88,11 +88,11 @@ class Tree{
         while(st.size()>0){
             Node t = st.pop();
             System.out.print(t.info+"  ");
-            if(t.right!=null){
+            if(t.right!=null){//8  4  2  1  3  5  6  7  9
                 st.push(t.right);
             }
             if(t.left!=null){
-               st.push(t.left);
+                st.push(t.left);
             }
         }
     }
@@ -108,12 +108,7 @@ class Tree{
             temp = temp.right;
           }
         }
-        if(parent.right.info==n){
-            parent.right = null;
-        }
-        else{
-            parent.left = null;
-        }
+        
     }
 }
 
@@ -121,10 +116,16 @@ public class InOrder{
 
     public static void main(String[] args) {
         Tree tree=new Tree();
-        tree.insert(34);
-        tree.insert(2);
-        tree.insert(12);
+        tree.insert(6);
         tree.insert(5);
+        tree.insert(10);
+        tree.insert(7);
+        tree.insert(9);
+        tree.insert(1);
+        tree.insert(3);
+        tree.insert(2);
+        tree.insert(8);
+        tree.preOrder();
         System.out.print("InOrder :");
         tree.inOrder();
         System.out.println();

@@ -1,0 +1,10 @@
+.main-container {
+  height: 10vh;
+  width: 100vw;
+}
+color-white {
+  color: white;
+}
+.hover-pink:hover {
+  background-color: #f64c72;
+}
