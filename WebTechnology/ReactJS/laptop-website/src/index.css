@@ -27,3 +27,6 @@ code {
 .color-green {
   color: rgb(89, 146, 89);
 }
+.min-height-80 {
+  min-height: 80vh;
+}
