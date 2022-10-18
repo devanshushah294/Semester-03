@@ -48,11 +48,11 @@ class Tree{
         while(stack1.size()>0){
           Node temp = stack1.pop();
           stack2.push(temp);
-          if(temp.right!=null) {
-            stack1.push(temp.right);
-          }
           if(temp.left!=null) {
             stack1.push(temp.left);
+          }
+          if(temp.right!=null) {
+            stack1.push(temp.right);
           }
         }
         while(stack2.size()>0) {
@@ -88,11 +88,11 @@ class Tree{
         while(st.size()>0){
             Node t = st.pop();
             System.out.print(t.info+"  ");
-            if(t.right!=null){//8  4  2  1  3  5  6  7  9
-                st.push(t.right);
-            }
             if(t.left!=null){
                 st.push(t.left);
+            }
+            if(t.right!=null){//8  4  2  1  3  5  6  7  9
+                st.push(t.right);
             }
         }
     }
