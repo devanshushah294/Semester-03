@@ -1,1 +1,6 @@
-<p>home works!</p>
+<h1>{{ welcomeMessage }}</h1>
+<img [src]="imageAddress" width="100px" />
+<br />
+<Button (click)="changeHelloMsg()">Change Hello Message</Button>
+<h1>{{ printMessage }}</h1>
+<input type="text" [(ngModel)]="printMessage" />

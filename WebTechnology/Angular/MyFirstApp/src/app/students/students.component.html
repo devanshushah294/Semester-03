@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="card col-3" *ngFor="let stu of students" style="width: 18rem">
+    <img [src]="stu.avatar" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">{{ stu.name }}</h5>
+      <p class="card-text">Department: {{ stu.department }}</p>
+      <p class="card-text">Roll No: {{ stu.roll_no }}</p>
+      <p class="card-text">City: {{ stu.city }}</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</div>

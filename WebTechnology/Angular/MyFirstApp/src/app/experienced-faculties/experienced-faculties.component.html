@@ -1,0 +1,23 @@
+<div class="row">
+  <div *ngFor="let fac of faculties">
+    <div
+      *ngIf="experienced(fac.FacultyExperience)"
+      class="card col col-3"
+      style="width: 18rem"
+    >
+      <img [src]="fac.FacultyImage" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">Faculty Name: {{ fac.FacultyName }}</h5>
+        <p class="card-text text-danger">{{ fac.FacultyDesignation }}</p>
+        <p>Qualification: {{ fac.FacultyEducationQualification }}</p>
+        <p class="bg-black text-light">
+          Experience: {{ fac.FacultyExperience }}
+        </p>
+        <p class="bg-danger text-light">
+          Working Since {{ fac.FacultyWorkingSince }}
+        </p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+</div>
