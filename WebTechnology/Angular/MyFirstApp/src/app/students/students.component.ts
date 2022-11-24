@@ -276,6 +276,7 @@ export class StudentsComponent {
     this.myForm.controls.password.setValue('');
     this.myForm.controls.roll_no.setValue('');
     this.myForm.controls.username.setValue('');
+    this.idToEdit = -1;
   }
   idToEdit = -1;
   delete(i: number) {

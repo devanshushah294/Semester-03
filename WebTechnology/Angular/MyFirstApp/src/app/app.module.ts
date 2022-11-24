@@ -11,6 +11,8 @@ import { ResultComponent } from './result/result.component';
 import { StudentsComponent } from './students/students.component';
 import { ProductsComponent } from './products/products.component';
 import { ExperiencedFacultiesComponent } from './experienced-faculties/experienced-faculties.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { WorkerComponent } from './worker/worker.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { ExperiencedFacultiesComponent } from './experienced-faculties/experienc
     StudentsComponent,
     ProductsComponent,
     ExperiencedFacultiesComponent,
+    EmployeeComponent,
+    WorkerComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
