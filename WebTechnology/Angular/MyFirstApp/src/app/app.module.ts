@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FacultiesComponent } from './faculties/faculties.component';
 import { ResultComponent } from './result/result.component';
 import { StudentsComponent } from './students/students.component';
@@ -23,7 +23,7 @@ import { ExperiencedFacultiesComponent } from './experienced-faculties/experienc
     ProductsComponent,
     ExperiencedFacultiesComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

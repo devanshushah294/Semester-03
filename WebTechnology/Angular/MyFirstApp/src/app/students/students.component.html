@@ -1,12 +1,63 @@
 <div class="row">
-  <div class="card col-3" *ngFor="let stu of students" style="width: 18rem">
+  <div
+    class="card col-3"
+    *ngFor="let stu of students; let i = index"
+    style="width: 18rem"
+  >
     <img [src]="stu.avatar" class="card-img-top" alt="..." />
     <div class="card-body">
       <h5 class="card-title">{{ stu.name }}</h5>
       <p class="card-text">Department: {{ stu.department }}</p>
       <p class="card-text">Roll No: {{ stu.roll_no }}</p>
       <p class="card-text">City: {{ stu.city }}</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <button class="btn btn-danger m-3" (click)="delete(i)">Delete</button>
+      <button class="btn btn-success m-3" (click)="setDataToEdit(i)">
+        Edit
+      </button>
     </div>
   </div>
 </div>
+<form class="mt-3" [formGroup]="myForm" (submit)="insert()">
+  <div class="form-group">
+    <label>createdAt</label>
+    <input type="text" class="form-control" formControlName="createdAt" />
+  </div>
+  <div class="form-group">
+    <label>name</label>
+    <input type="text" class="form-control" formControlName="name" />
+  </div>
+  <div class="form-group">
+    <label>avatar</label>
+    <input type="text" class="form-control" formControlName="avatar" />
+  </div>
+  <div class="form-group">
+    <label>department</label>
+    <input type="text" class="form-control" formControlName="department" />
+  </div>
+  <div class="form-group">
+    <label>roll_no</label>
+    <input type="text" class="form-control" formControlName="roll_no" />
+  </div>
+  <div class="form-group">
+    <label>city</label>
+    <input type="text" class="form-control" formControlName="city" />
+  </div>
+  <div class="form-group">
+    <label>password</label>
+    <input type="text" class="form-control" formControlName="password" />
+  </div>
+  <div class="form-group">
+    <label>username</label>
+    <input type="text" class="form-control" formControlName="username" />
+  </div>
+  <div class="form-group">
+    <label>id</label>
+    <input type="text" class="form-control" formControlName="id" />
+  </div>
+  <button type="submit" class="btn btn-primary" *ngIf="idToEdit == -1">
+    Add Student
+  </button>
+  <button type="submit" class="btn btn-primary" *ngIf="idToEdit > -1">
+    Edit Faculty
+  </button>
+</form>

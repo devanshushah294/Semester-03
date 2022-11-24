@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Student } from '../student';
 
 @Component({
   selector: 'app-students',
@@ -6,7 +8,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./students.component.css'],
 })
 export class StudentsComponent {
-  students = [
+  myForm = new FormGroup({
+    createdAt: new FormControl(''),
+    name: new FormControl(''),
+    avatar: new FormControl(''),
+    department: new FormControl(''),
+    roll_no: new FormControl(''),
+    city: new FormControl(''),
+    username: new FormControl(''),
+    password: new FormControl(''),
+    id: new FormControl(''),
+  });
+  students: Student[] = [
     {
       createdAt: '2022-08-04T12:07:14.676Z',
       name: 'Mr. Toby Ledner',
@@ -248,4 +261,36 @@ export class StudentsComponent {
       id: '20',
     },
   ];
+  insert() {
+    if (this.idToEdit == -1) {
+      this.students.push(<Student>this.myForm.value);
+    } else if (this.idToEdit > -1) {
+      this.students[this.idToEdit] = <Student>this.myForm.value;
+    }
+    this.myForm.controls.avatar.setValue('');
+    this.myForm.controls.createdAt.setValue('');
+    this.myForm.controls.city.setValue('');
+    this.myForm.controls.department.setValue('');
+    this.myForm.controls.id.setValue('');
+    this.myForm.controls.name.setValue('');
+    this.myForm.controls.password.setValue('');
+    this.myForm.controls.roll_no.setValue('');
+    this.myForm.controls.username.setValue('');
+  }
+  idToEdit = -1;
+  delete(i: number) {
+    this.students.splice(i, 1);
+  }
+  setDataToEdit(i: number) {
+    this.idToEdit = i;
+    this.myForm.controls.avatar.setValue(this.students[i].avatar);
+    this.myForm.controls.createdAt.setValue(this.students[i].createdAt);
+    this.myForm.controls.city.setValue(this.students[i].city);
+    this.myForm.controls.department.setValue(this.students[i].department);
+    this.myForm.controls.id.setValue(this.students[i].id);
+    this.myForm.controls.name.setValue(this.students[i].name);
+    this.myForm.controls.password.setValue(this.students[i].password);
+    this.myForm.controls.roll_no.setValue(this.students[i].roll_no);
+    this.myForm.controls.username.setValue(this.students[i].username);
+  }
 }

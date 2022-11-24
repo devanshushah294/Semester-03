@@ -1,19 +1,83 @@
 <div class="row">
   <div
     class="card col col-3"
-    *ngFor="let fac of faculties"
+    *ngFor="let fac of faculties; let i = index"
     style="width: 18rem"
   >
     <img [src]="fac.FacultyImage" class="card-img-top" alt="..." />
     <div class="card-body">
       <h5 class="card-title">Faculty Name: {{ fac.FacultyName }}</h5>
+      <h5>{{ fac.FacultyAge }}</h5>
       <p class="card-text text-danger">{{ fac.FacultyDesignation }}</p>
       <p>Qualification: {{ fac.FacultyEducationQualification }}</p>
       <p class="bg-black text-light">Experience: {{ fac.FacultyExperience }}</p>
       <p class="bg-danger text-light">
         Working Since {{ fac.FacultyWorkingSince }}
       </p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <button class="btn btn-danger m-3" (click)="deleteFaculty(i)">
+        Delete
+      </button>
+      <button class="btn btn-success m-3" (click)="edit(i)">Edit</button>
     </div>
   </div>
 </div>
+
+<form class="mt-5" [formGroup]="myForm" (ngSubmit)="insert()">
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Id</label>
+    <input class="form-control" formControlName="FacultyId" />
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Age</label>
+    <input class="form-control" formControlName="FacultyAge" />
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label"
+      >Faculty Name</label
+    >
+    <input class="form-control" formControlName="FacultyName" />
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Image</label>
+    <input class="form-control" formControlName="FacultyImage" />
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Designation</label>
+    <input class="form-control" formControlName="FacultyDesignation" />
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label"
+      >Qualification</label
+    >
+    <input
+      class="form-control"
+      formControlName="FacultyEducationQualification"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Experience</label>
+    <input class="form-control" formControlName="FacultyExperience" />
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label"
+      >Working Since</label
+    >
+    <input class="form-control" formControlName="FacultyWorkingSince" />
+  </div>
+  <button
+    *ngIf="idToEdit == -1"
+    class="btn btn-primary"
+    type="submit"
+    value="Add Faculty"
+  >
+    Add Faculty
+  </button>
+  <button
+    class="btn btn-primary"
+    type="submit"
+    value="Edit Faculty"
+    *ngIf="idToEdit > -1"
+  >
+    Edit Faculty
+  </button>
+</form>
