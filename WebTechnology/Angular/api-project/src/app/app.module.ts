@@ -7,12 +7,20 @@ import { HomeComponent } from './home/home.component';
 
 import { StudentsComponent } from './students/students.component';
 import { HeaderComponent } from './header/header.component';
-import { FacultyByIdComponent } from './faculty-by-id/faculty-by-id.component';
-import { StundentByIdComponent } from './stundent-by-id/stundent-by-id.component';
 import { StudentByIdComponent } from './student-by-id/student-by-id.component';
+import { EmployeesComponent } from './employees/employees.component';
+import { EmployeeByIdComponent } from './employee-by-id/employee-by-id.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, StudentsComponent, HeaderComponent, FacultyByIdComponent, StundentByIdComponent, StudentByIdComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    StudentsComponent,
+    HeaderComponent,
+    StudentByIdComponent,
+    EmployeesComponent,
+    EmployeeByIdComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,12 +1,13 @@
 <div class="row">
-  <div class="card col-3" *ngFor="let stu of students" width="10%">
+  <div class="card col-3" *ngFor="let stu of students; let i = index">
     <img [src]="stu.avatar" class="card-img-top" alt="..." />
     <div class="card-body">
       <h5 class="card-title">{{ stu.name }}</h5>
       <h5 class="card-text">City:{{ stu.city }}</h5>
       <h5 class="card-text">Department:{{ stu.department }}</h5>
       <h5 class="card-text">Roll No:{{ stu.roll_no }}</h5>
-      <a routerLink="/student/:id" class="btn btn-primary">Details</a>
+      <a routerLink="/student/{{ stu.id }}" class="btn btn-primary">Details</a>
+      <button class="btn btn-danger" (click)="delete(stu.id)">Delete</button>
     </div>
   </div>
 </div>

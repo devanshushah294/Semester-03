@@ -16,4 +16,9 @@ export class ApiStudentService {
       'https://630c662f53a833c53429c1c8.mockapi.io/students/' + i
     );
   }
+  deleteById(i: any) {
+    return this.__http.delete(
+      'https://630c662f53a833c53429c1c8.mockapi.io/students/' + i
+    );
+  }
 }

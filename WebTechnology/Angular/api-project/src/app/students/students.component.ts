@@ -15,4 +15,7 @@ export class StudentsComponent {
       this.students = res;
     });
   }
+  delete(i: any) {
+    this.students = this.students.splice(i, 1);
+  }
 }

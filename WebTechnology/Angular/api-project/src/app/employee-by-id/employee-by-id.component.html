@@ -1,0 +1,12 @@
+<div class="card col col-3">
+  <img class="card-img-top" [src]="employee.image" alt="Card image cap" />
+  <div class="card-body">
+    <h5 class="card-title">{{ employee.employeeName }}</h5>
+    <p class="card-text">
+      {{ employee.details }}
+    </p>
+    <a routerLink="/employee/{{ employee.id }}" class="btn btn-primary"
+      >Details</a
+    >
+  </div>
+</div>
