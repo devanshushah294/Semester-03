@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiStudentService } from '../api-student.service';
 import { Student } from '../student';
 
@@ -9,13 +10,23 @@ import { Student } from '../student';
 })
 export class StudentsComponent {
   students: Student[] = [];
-  constructor(private __api: ApiStudentService) {}
+  constructor(
+    private __api: ApiStudentService,
+    private router: Router,
+    private __actRoute: ActivatedRoute
+  ) {}
   ngOnInit() {
     this.__api.getAllStudents().subscribe((res: any) => {
       this.students = res;
     });
   }
   delete(i: any) {
-    this.students = this.students.splice(i, 1);
+    this.__api.deleteById(i).subscribe((res: any) => {
+      this.ngOnInit();
+    });
+  }
+  idToEdit = -1;
+  insert() {
+    console.log(this.__actRoute.snapshot.params['id']);
   }
 }
